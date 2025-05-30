@@ -1,0 +1,104 @@
+<div>
+<section class="contact-wrapper">
+    <div class="contact-container">
+      <!-- Left Panel -->
+      <div class="contact-left">
+        <h2>We’re Here to Help</h2>
+        <p>
+          To book an appointment, give us a call or fill out the online appointment form on our website.
+          Walk-ins are also welcome during clinic hours.
+        </p>
+  
+        <h4>Contact Info</h4>
+        <ul class="contact-info">
+            <li><div><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M15.7087 15.8333H4.29199C3.19199 15.8333 2.29199 14.9417 2.29199 13.8333V6.16666C2.29199 5.06666 3.18366 4.16666 4.29199 4.16666H15.7087C16.8087 4.16666 17.7087 5.05832 17.7087 6.16666V13.8333C17.7087 14.9417 16.817 15.8333 15.7087 15.8333Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16.8509 4.80832L11.1259 10.4917C10.4842 11.1333 9.51758 11.1333 8.86758 10.4917L3.14258 4.80832" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M11.7754 9.93329L16.8504 14.8583" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3.15039 14.8583L8.28372 9.99997" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg></div><div>abhiramr001&#64;gmail.com</div></li>
+            <li><div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M9.61629 10.3833C12.8496 13.6167 13.5913 9.875 15.6496 11.9333C17.633 13.9167 18.7746 14.3167 16.258 16.8333C15.9413 17.0833 13.9413 20.1333 6.89963 13.1C-0.142035 6.05834 2.90796 4.05833 3.15796 3.74167C5.68296 1.21667 6.07463 2.36667 8.05796 4.35C10.1246 6.40833 6.38296 7.15 9.61629 10.3833Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg></div> <div>+91 8073701110</div></li>
+            <li>
+              <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M11.9998 2.75C8.3098 2.75 5.2998 5.76 5.2998 9.45C5.2998 14.03 11.2998 20.77 11.5498 21.05C11.7898 21.32 12.2098 21.32 12.4498 21.05C12.7098 20.77 18.6998 14.03 18.6998 9.45C18.6998 5.76 15.6898 2.75 11.9998 2.75Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.3846 11.7852C13.6772 11.5795 14.5584 10.3647 14.3526 9.07204C14.1468 7.77936 12.9321 6.89824 11.6394 7.104C10.3468 7.30976 9.46563 8.52449 9.67139 9.81717C9.87715 11.1099 11.0919 11.991 12.3846 11.7852Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg></div>
+              <div>1st Floor, Akul Arcade, 9, Uttarahalli Main Rd,
+              Above Pizza Hut, Ankappa Layout, Chikkalasandra,
+              Bengaluru, Karnataka - 560061</div>
+            </li>
+        </ul>
+  
+        <h4>Clinic Timings</h4>
+        <p>Monday to Saturday: 5:30 PM – 8:30 PM<br>Sunday: Closed</p>
+      </div>
+  
+      <!-- Right Panel: Form -->
+<div class="contact-form-bg">
+    <div class="contact-form-card">
+        <h3>Become a Partner</h3>
+        <p>Break the ice! Let us help you out</p>
+        <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+          <input
+            type="text"
+            formControlName="name"
+            placeholder="Name*"
+            [class.invalid]="submitted && bookForm.get('name')?.invalid"
+          />
+          <div class="error" *ngIf="submitted && bookForm.get('name')?.invalid">
+            Name is required.
+          </div>
+        
+          <input
+            type="tel"
+            formControlName="phone"
+            placeholder="Phone Number*"
+            [class.invalid]="submitted && bookForm.get('phone')?.invalid"
+          />
+          <div class="error" *ngIf="submitted && bookForm.get('phone')?.invalid">
+            Enter a valid 10-digit phone number.
+          </div>
+        
+          <input
+            type="email"
+            formControlName="email"
+            placeholder="Email*"
+            [class.invalid]="submitted && bookForm.get('email')?.invalid"
+          />
+          <div class="error" *ngIf="submitted && bookForm.get('email')?.invalid">
+            Enter a valid email address.
+          </div>
+        
+          <textarea
+            rows="4"
+            formControlName="message"
+            placeholder="Message"
+          ></textarea>
+        
+          <button type="submit">Book an Appointment</button>
+        </form>
+        
+      </div>
+</div>
+    </div>
+  </section>
+
+  <div class="parking">
+    <h3>Clinic Location</h3>
+    <div class="map-wrapper">
+      <div class="map-responsive">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.062370637165!2d77.54236757484128!3d12.967860787347105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3de3d4381d27%3A0xc872c57f28df1f90!2sSankalpa%20Skin%20and%20ENT%20center!5e0!3m2!1sen!2sin!4v1748515202008!5m2!1sen!2sin"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+  
+  <!-- <p-toast></p-toast> -->
+  </div>
+  

@@ -1,0 +1,377 @@
+.container {
+  background-color: #fff8f8;
+  margin-top: 100px;
+}
+.department-highlight {
+    position: relative;
+    background-color: #ffffff;
+    padding: 4rem 2rem;
+    padding-left: 6rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+  
+    .content-wrapper {
+      max-width: 800px;
+      z-index: 2;
+  
+      h2 {
+        color: #000;
+        text-align: center;
+        font-family: "Red Hat Display";
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+        margin-bottom: 1rem;
+      }
+  
+      p {
+        color: #000;
+        text-align: center;
+        font-family: "Red Hat Display";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 1rem;
+      }
+    }
+  
+    .background-shapes {
+      position: absolute;
+      top: -61px;
+      right: -11px;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      height: 497px;
+  
+  
+      img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: auto;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .background-shapes-1{
+      position: absolute;
+      bottom: -262px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+    }
+}
+.specialty-card {
+  border-radius: 24px;
+  margin: 2rem 6rem;
+  /* max-width: 1200px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.specialty-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.specialties {
+  background-color: #fff8f8;
+}
+.specialties h2 {
+  color: #13366d;
+  font-feature-settings: "salt" on, "liga" off;
+  font-family: "Red Hat Display";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-align: center;
+}
+.clinical-services h2 {
+  color: #13366d;
+  font-feature-settings: "salt" on, "liga" off;
+  font-family: "Red Hat Display";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-align: center;
+}
+
+.specialty-image img {
+  width: 270px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+.specialty-card .reverse {
+  flex-direction: row-reverse;
+}
+.specialty-card:hover {
+  transform: translateY(-4px);
+}
+.specialty-text {
+  flex: 1;
+  border-radius: 40px;
+  /* background: #ffd6bb; */
+  height: 240px;
+  padding: 0 23px;
+}
+
+.specialty-text h4 {
+  color: #000;
+  font-family: "Red Hat Display";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 10px;
+}
+
+.specialty-text h3 {
+  color: #000;
+  font-family: "Red Hat Display";
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 14px;
+}
+
+.specialty-text p {
+  color: #000;
+  font-family: "Red Hat Display";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  line-height: 1.6;
+}
+/* Section Styling */
+.clinical-services {
+  padding: 2rem;
+  text-align: center;
+}
+
+.clinical-services h3 {
+  margin-bottom: 2rem;
+  color: #00245d;
+  font-family: "Red Hat Display";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+.clinical-services h4 {
+  color: #00245d;
+  font-family: "Red Hat Display";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.clinical-services p {
+  color: #00245d;
+  text-align: center;
+  font-family: "Red Hat Display";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+/* Card Container */
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: visible; /* 👈 critical for hover lift */
+  position: relative; /* 👈 ensures z-index works inside */
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  cursor: pointer;
+  padding: 3rem 0;
+}
+
+.card {
+  flex: 0 0 311px;
+  position: relative;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-left: -50px;
+  border-radius: 8px;
+  background: #ffd6bb;
+  box-shadow: 3px 4px 14px 0px rgba(30, 30, 30, 0.25);
+  transition: transform 0.35s ease, z-index 0.2s ease;
+  scroll-snap-align: start;
+  z-index: 1;
+  height: 460px;
+  width: 370px;
+}
+
+.card:first-child {
+  margin-left: 0;
+}
+
+.card:hover {
+  transform: translateY(-20px);
+  z-index: 10; /* 👈 bring to top */
+}
+.card:hover ~ .card {
+  /* left: 50px; */
+  transform: translateX(50px);
+  transition: transform 0.35s ease;
+}
+
+/* Optional: Add distinct background colors */
+.card:nth-child(1) {
+  background-color: #bbe5ff;
+}
+.card:nth-child(2) {
+  background-color: #e4bbff;
+}
+.card:nth-child(3) {
+  background-color: #bbffc1;
+}
+.card:nth-child(4) {
+  background-color: #ffd6bb;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .specialty-card .reverse {
+    flex-direction: column;
+  }
+  .specialty-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .specialty-image img {
+    margin-bottom: 1rem;
+  }
+  .specialty-text {
+    height: auto;
+  }
+  .specialty-card {
+    margin: 2rem 2rem;
+  }
+  .card-container {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 1rem 0;
+  }
+  .clinical-services h2{
+    font-size: 30px;
+  }
+  .card-carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 2rem 0;
+  }
+
+  .scroll-track {
+    display: flex;
+    transition: transform 0.05s linear;
+  }
+
+  .card {
+    flex: 0 0 auto;
+    width: 280px;
+    margin-right: 20px;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background-color: #fff6e5;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+  }
+
+  /* Optional hover scaling */
+  .card:hover {
+    transform: scale(1.03);
+    transition: transform 0.2s ease;
+  }
+  .card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card h3 {
+    margin-bottom: 2rem;
+    color: #00245d;
+    font-family: "Red Hat Display";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-align: center;
+    margin: 18px
+  }
+  .card h4 {
+    color: #00245d;
+    font-family: "Red Hat Display";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+    margin: 0;
+  }
+  .card p {
+    color: #00245d;
+    text-align: center;
+    font-family: "Red Hat Display";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-align: center;
+    margin:0
+  }
+  .department-highlight{
+    flex-direction: column;
+    padding: 7rem 1.5rem;
+  
+    .content-wrapper {
+      text-align: center;
+  
+      h2 {
+        font-size: 1.5rem;
+      }
+  
+      p {
+        font-size: 0.95rem;
+      }
+    }
+    .background-shapes{
+      width: 50%;
+    }
+    .background-shapes img {
+      height: auto;
+      width: 100%;
+      top: 0;
+      right: 0;
+      object-fit: contain;
+    }
+    .background-shapes-1{
+      bottom: -72%;
+    }
+  }
+  }
+

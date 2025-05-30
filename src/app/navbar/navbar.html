@@ -1,0 +1,54 @@
+<header class="top-bar">
+    <div class="logo">
+      <img src="./nav-logo.png" alt="DiyaanviClinic" />
+    </div>
+  
+    <!-- Hamburger button for mobile -->
+    <button class="menu-toggle" style="color: white;" (click)="toggleMenu()">
+      {{ menuOpen ? '✕' : '☰' }}
+    </button>
+  
+    <!-- Desktop Menu -->
+    <nav class="desktop-menu">
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li class="dropdown" (click)="openDropdown()">
+          <a href="javascript:void(0)">Doctors</a>
+          <ul class="doctor-dropdown" *ngIf="showDoctorDropdown">
+            <div class="doctor-card-dropdown" *ngIf="showDoctorDropdown">
+              <div class="doctor-card" *ngFor="let doctor of doctors">
+                <a [routerLink]="doctor.link">
+                  <div class="image-mask">
+                    <img [src]="doctor.image" [alt]="doctor.name" />
+                  </div>
+                  <div class="doc-info">
+                    <h4>{{ doctor.name }}</h4>
+                    <p>{{ doctor.title }}</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </ul>
+        </li>
+        <li><a routerLink="/services">Services</a></li>
+        <li><a routerLink="/contact">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Mobile Bottom Drawer Menu -->
+  <div class="bottom-menu"  *ngIf="menuOpen" [class.active]="menuOpen">
+    <ul class="menu-items">
+      <li><a routerLink="/" (click)="closeMenu()">Home</a></li>
+      <li>
+        <span class="dropdown-toggle">Doctors ▼</span>
+        <ul class="mobile-submenu">
+          <li><a routerLink="/doctor/dr-bhavya" (click)="closeMenu()">Dr. Bhavya N</a></li>
+          <li><a routerLink="/doctor/dr-abhiram" (click)="closeMenu()">Dr. Abhiram R</a></li>
+        </ul>
+      </li>
+      <li><a routerLink="/services" (click)="closeMenu()">Services</a></li>
+      <li><a routerLink="/contact" (click)="closeMenu()">Contact Us</a></li>
+    </ul>
+  </div>
+  
