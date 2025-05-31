@@ -18,6 +18,9 @@ export class Navbar {
   closeMenu() {
     this.menuOpen = false;
   }
+  closeDropDown() {
+    this.showDoctorDropdown = false;
+  }
   doctors = [
     {
       name: 'Dr. Bhavya N',

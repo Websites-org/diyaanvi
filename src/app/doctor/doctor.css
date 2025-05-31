@@ -261,233 +261,110 @@
     }
   }
 }
-.float-carousel {
+.cards {
   position: relative;
-  width: 750px;
-  height: 260px;
-  margin: 4rem auto;
-  perspective: 1000px;
-  overflow: visible;
+  list-style-type: none;
+  padding: 0;
+  max-width: 34em;
+  margin: 20% auto 0;
 }
 
 .card {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  padding: 2rem;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-  transition: all 0.6s ease;
-  opacity: 0;
-  transform: scale(0.9);
-  z-index: 1;
-
-  .quote {
-    color: #fff;
-    text-align: center;
-    font-family: "Red Hat Display";
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    margin-bottom: 1rem;
-  }
-
-  .author {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-    }
-
-    h4 {
-      margin: 0;
-      color: #fff;
-      text-align: center;
-      font-family: "Red Hat Display";
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-    }
-
-    p {
-      margin: 0;
-      color: #fff;
-      text-align: center;
-      font-family: "Red Hat Display";
-      font-size: 24px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: normal;
-    }
-  }
-}
-
-.card.front {
   z-index: 2;
-  opacity: 1;
-  transform: translateX(0) translateY(0) rotateZ(0deg) scale(1);
-}
-
-.card.float-in {
-  z-index: 2;
-  opacity: 1;
-  animation: riseFromBackRight 0.9s ease forwards;
-}
-
-.card.float-in-left {
-  z-index: 3;
-  opacity: 1;
-  animation: riseFromBackLeft 0.9s ease forwards;
-}
-
-/* @keyframes floatInFromTopRight {
-  0% {
-    transform: translate(150px, -200px) rotateZ(10deg) scale(1);
-    opacity: 0.2;
-  }
-  100% {
-    transform: translateX(0) translateY(0) rotateZ(0deg) scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes floatInFromTopLeft {
-  0% {
-    transform: translate(-150px, -200px) rotateZ(-10deg) scale(1);
-    opacity: 0.2;
-  }
-  100% {
-    transform: translateX(0) translateY(0) rotateZ(0deg) scale(1);
-    opacity: 1;
-  }
-} */
-
-@keyframes riseFromBackRight {
-  0% {
-    transform: translate(230px, -150px) scale(0.8) rotateZ(23deg);
-    top:-83px;
-    right: 10px;
-    opacity: 1;
-    z-index: 0;
-  }
-  100% {
-    transform: translate(0, 0) scale(1) rotateZ(0deg);
-    opacity: 1;
-    z-index: 4;
-  }
-}
-
-@keyframes riseFromBackLeft {
-  0% {
-    transform: translate(-230px, -150px) scale(0.8) rotateZ(-23deg);
-    opacity: 1;
-    z-index: 0;
-  }
-  100% {
-    transform: translate(0, 0) scale(1) rotateZ(0deg);
-    opacity: 1;
-    z-index: 4;
-  }
-}
-
-
-
-
-.nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 2rem;
-  background: none;
-  border: none;
-  z-index: 10;
-  color: #444;
+  background: #ccc;
+  border-radius: 30px;
+  padding: 40px;
+  box-shadow: 0 0 40px #000;
+  transform: translateY(0) rotate(4deg) translateX(25px) scale(1);
+  transform-origin: 0 0;
+  transition: transform 0.6s cubic-bezier(.8, .2, .1, 0.8) 0.1s,
+    background 0.4s linear;
   cursor: pointer;
-
-  &.prev {
-    left: -40px;
-  }
-
-  &.next {
-    right: -103px;
-  }
-}
-.gallery {
-  --d: 10s; /* duration */
-  width: 220px;
-  display: grid;
+  user-select: none;
 }
 
-.gallery img {
-  grid-area: 1/1;
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border: 10px solid #f2f2f2;
-  box-shadow: 0 0 4px #0007;
-  border-radius: 15px;
-  animation: slide var(--d) infinite;
+.card--current {
+  cursor: auto;
+  user-select: auto;
+  position: relative;
+  z-index: 10;
+  opacity: 1;
+  background: #EEE;
+  transform: rotate(-1deg) translateX(0%) scale(1);
 }
 
-/* Make sure last child loops differently */
-.gallery img:last-child {
-  animation-name: slide-last;
+.card--next {
+  z-index: 5;
+  transform: translateY(-25px) rotate(4deg) translateX(25px) scale(1);
 }
 
-/* Animation keyframe */
-@keyframes slide {
+.card--out {
+  animation: card-out 0.6s cubic-bezier(.8, .2, .1, 0.8);
+  transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+  z-index: 1;
+  background: #bbb;
+}
+.card--in {
+  animation: card-in 2s cubic-bezier(0.25, 1.5, 0.5, 1) forwards;
+}
+
+
+.card--below {
+  z-index: 1;
+  opacity: 1;
+  transform: scale(0.95) translateY(25px);
+}
+
+
+.card--hidden {
+  z-index: 0;
+  opacity: 0;
+  transform: scale(0.9) translateY(60px);
+}
+@keyframes card-in {
   0% {
-    transform: scale(1) rotate(0deg) translateY(0);
-    opacity: 1;
-    z-index: 5;
+    z-index: 1;
+    opacity: 0.3;
+    transform: scale(0.9) translateY(50px) rotate(4deg);
   }
   50% {
-    transform: scale(0.8) rotate(10deg) translateY(-20px);
-    opacity: 0.7;
+    z-index: 10;
+    transform: scale(1.05) translateY(-20px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    z-index: 20;
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+
+.card--behind {
+  opacity: 0;
+  z-index: 0;
+}
+
+
+@keyframes card-out {
+  0% {
+    z-index: 20;
+    transform: translateY(0px) rotate(-4deg);
+  }
+  50% {
+    transform: translateY(-120%) rotate(-5deg) translateX(-40px);
+  }
+  80% {
     z-index: 1;
   }
   100% {
-    transform: scale(1) rotate(0deg) translateY(0);
-    opacity: 1;
-    z-index: 5;
+    transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
   }
 }
 
-/* You can define a separate animation for the last card if needed */
-@keyframes slide-last {
-  0%,
-  100% {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-  }
-  50% {
-    opacity: 0.5;
-    transform: scale(0.8) rotate(-10deg) translateY(-20px);
-  }
-}
-.gallery img:nth-child(1) {
-  animation-delay: 0s;
-}
-.gallery img:nth-child(2) {
-  animation-delay: 2s;
-}
-.gallery img:nth-child(3) {
-  animation-delay: 4s;
-}
-.gallery img:nth-child(4) {
-  animation-delay: 6s;
-}
-.gallery img:nth-child(5) {
-  animation-delay: 8s;
-}
 
 @media (max-width: 992px) {
   .about-wrapper {

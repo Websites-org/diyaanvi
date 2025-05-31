@@ -70,6 +70,7 @@
   line-height: 24px; /* 150% */
   width: 150px;
   height: 44px;
+  cursor: pointer;
 }
 
 .outline-btn {
@@ -79,7 +80,7 @@
 
   /* Front Shadow */
   box-shadow: 0px 2px 30px 0px rgba(0, 0, 0, 0.25);
-  padding: 0.75rem 1.5rem;
+  /* padding: 0.75rem 1.5rem; */
   border-radius: 6px;
   color: #fff;
   text-align: center;
@@ -89,6 +90,9 @@
   font-style: normal;
   font-weight: 600;
   line-height: 24px; /* 150% */
+  width: 150px;
+  height: 44px;
+  cursor: pointer;
 }
 
 /* Decorative graphic on left or right */
@@ -334,6 +338,7 @@
   height: 280px;
   flex-shrink: 0;
   position: relative;
+  cursor: pointer;
 }
 
 .doctor-card img {
@@ -753,8 +758,13 @@ textarea:focus {
   margin-top: 0.5rem;
   transition: 0.3s;
   height: 47px;
+  width: 50%;
 }
-
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .book-appt:hover {
   background-color: #222;
 }
@@ -839,6 +849,7 @@ textarea:focus {
     text-align: center;
     width: 80%;
     height: auto;
+    cursor: pointer;
   }
 
   .doctor-card .doctor-bio {
@@ -871,6 +882,11 @@ textarea:focus {
     position: relative;
     width: 100%;
     padding: 2rem 0;
+    background-color: #fffaf9;
+  }
+
+  .know-more{
+    padding-top: 40px;
   }
 
   .scroll-track {
@@ -987,7 +1003,7 @@ textarea:focus {
   .image-container{
     margin: -78px auto 0;
   }
-  .clinical-services{
+  /* .card-carousel{
     display: none !important;
-  }
+  } */
 }

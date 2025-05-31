@@ -136,6 +136,11 @@
   outline: none;
 }
 
+.button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .contact-form-card form button {
   background-color: #000;
   color: #fff;
@@ -152,6 +157,7 @@
   cursor: pointer;
   transition: 0.3s;
   height: 47px;
+  width: 50%;
 }
 
 .contact-form-card form button:hover {

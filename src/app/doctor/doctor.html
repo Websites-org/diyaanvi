@@ -27,7 +27,7 @@
           specializes in managing chronic illnesses such as diabetes, hypertension, thyroid disorders and general health
           concerns.
         </p>
-       <div class="button">
+       <div [routerLink]="'/contact'" class="button">
         <button class="book-btn">Book Appointment</button>
        </div>
       </div>
@@ -71,15 +71,22 @@
 
   <button class="nav prev" (click)="prev()">&#10094;</button>
   <button class="nav next" (click)="next()">&#10095;</button>
-</div>
-
-<div class="gallery">
-  <img src="./img-1.png" alt="1" />
-  <img src="./img-2.png" alt="2" />
-  <img src="./img-3.png" alt="3" />
-  <img src="./img-4.png" alt="4" />
 </div> -->
 
 
 
+<!-- <ul class="cards">
+  <li
+    *ngFor="let card of cards; let i = index"
+    class="card"
+    [ngClass]="getCardClass(i)"
+    (click)="onCardClick(i)"
+  >
+    <h1>{{ card.title }}</h1>
+    <p>{{ card.content }}</p>
+  </li>
+</ul>
+
+
+<button (click)="clickNext()">Next</button> -->
 

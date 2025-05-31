@@ -9,8 +9,8 @@
             built on a foundation of clinical excellence, integrity, and patient-first care.
         </p>
         <div class="buttons">
-            <button class="primary-btn">Know more</button>
-            <button class="outline-btn">Contact Us</button>
+            <button class="primary-btn" (click)="scrollToAbout()">Know more</button>
+            <button class="outline-btn" [routerLink]="'/contact'">Contact Us</button>
         </div>
     </div>
     <div class="hero-background-decor-1"></div>
@@ -23,7 +23,7 @@
         <span class="badge badge-right">Rooted in Trust</span>
     </div>
 </section>
-<section class="about-section">
+<section id="about" class="about-section">
     <div class="about-container">
         <div class="about-icon">
             <div class="grid">
@@ -69,7 +69,7 @@
     </div>
 
     <div class="doctors-grid">
-        <div class="doctor-card">
+        <div class="doctor-card" [routerLink]="'/doctor/dr-bhavya'">
             <img src="./bhavya.png" alt="Dr. Bhavya" />
             <div class="doctor-info">
                 <div class="doctor-header">
@@ -90,7 +90,7 @@
             </div>
         </div>
 
-        <div class="doctor-card">
+        <div class="doctor-card" [routerLink]="'/doctor/dr-abhiram'">
             <img src="./abhiram.png" alt="Dr. Abhiram" />
             <div class="doctor-info">
                 <div class="doctor-header">
@@ -216,7 +216,7 @@
                 reassuring.</p>
         </div>
     </div>
-    <div class="button">
+    <div [routerLink]="'/services'" *ngIf="!isMobile" class="button">
         <div class="know-more-btn">Know More</div>
     </div>
 </section>
@@ -230,6 +230,9 @@
             <p>{{cards[currentIndex].content}}</p>
 
         </div>
+    </div>
+    <div [routerLink]="'/services'" *ngIf="isMobile" class="button know-more">
+        <div class="know-more-btn">Know More</div>
     </div>
 </section>
 
@@ -302,15 +305,49 @@
   
       <!-- Right: Form -->
       <div class="appointment-form">
-        <h3>Become a Partner</h3>
-        <p>Break the ice! Let us help you out</p>
-        <form>
-          <input type="text" placeholder="Name*" required />
-          <input type="text" placeholder="Phone Number*" required />
-          <input type="email" placeholder="Email*" required />
-          <textarea placeholder="Message" rows="3"></textarea>
-          <button class="book-appt" type="submit">Book an Appointment</button>
-        </form>
+        <h3>Book an Appointment</h3>
+        <p>Please fill out the form below</p>
+        <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+            <input
+              type="text"
+              formControlName="name"
+              placeholder="Name*"
+              [class.invalid]="submitted && bookForm.get('name')?.invalid"
+            />
+            <div class="error" *ngIf="submitted && bookForm.get('name')?.invalid">
+              Name is required.
+            </div>
+          
+            <input
+              type="tel"
+              formControlName="phone"
+              placeholder="Phone Number*"
+              [class.invalid]="submitted && bookForm.get('phone')?.invalid"
+            />
+            <div class="error" *ngIf="submitted && bookForm.get('phone')?.invalid">
+              Enter a valid 10-digit phone number.
+            </div>
+          
+            <input
+              type="email"
+              formControlName="email"
+              placeholder="Email*"
+              [class.invalid]="submitted && bookForm.get('email')?.invalid"
+            />
+            <div class="error" *ngIf="submitted && bookForm.get('email')?.invalid">
+              Enter a valid email address.
+            </div>
+          
+            <textarea
+              rows="4"
+              formControlName="message"
+              placeholder="Message"
+            ></textarea>
+          
+            <div class="button">
+              <button class="book-appt" type="submit">Submit</button>
+            </div>
+          </form>
       </div>
     </div>
   </section>

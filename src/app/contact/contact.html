@@ -38,8 +38,8 @@
       <!-- Right Panel: Form -->
 <div class="contact-form-bg">
     <div class="contact-form-card">
-        <h3>Become a Partner</h3>
-        <p>Break the ice! Let us help you out</p>
+        <h3>Book an Appointment</h3>
+        <p>Please fill out the form below</p>
         <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
           <input
             type="text"
@@ -77,7 +77,9 @@
             placeholder="Message"
           ></textarea>
         
-          <button type="submit">Book an Appointment</button>
+          <div class="button">
+            <button type="submit">Submit</button>
+          </div>
         </form>
         
       </div>
@@ -89,12 +91,7 @@
     <h3>Clinic Location</h3>
     <div class="map-wrapper">
       <div class="map-responsive">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.062370637165!2d77.54236757484128!3d12.967860787347105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3de3d4381d27%3A0xc872c57f28df1f90!2sSankalpa%20Skin%20and%20ENT%20center!5e0!3m2!1sen!2sin!4v1748515202008!5m2!1sen!2sin"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.958294290104!2d77.54828457484027!3d12.910402087399376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3fd023f39aa3%3A0xf596d723ba8f3bff!2sDiyaanvi%20Multi%20Speciality%20Clinic!5e0!3m2!1sen!2sin!4v1748671677286!5m2!1sen!2sin"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </div>

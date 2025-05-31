@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -35,12 +37,44 @@ export class Home {
       this.currentIndex = (this.currentIndex + 1) % this.cards.length;
     }, 5000); // 5 seconds
   }
-
+  scrollToAbout(): void {
+    this.viewportScroller.scrollToAnchor('about');
+  }
   pauseRotation() {
     if (this.intervalId) clearInterval(this.intervalId);
   }
 
   resumeRotation() {
     this.startRotation();
+  }
+
+  bookForm: FormGroup;
+  submitted = false;
+
+  constructor(private fb: FormBuilder, private viewportScroller: ViewportScroller) {
+    this.bookForm = this.fb.group({
+      name: ['', Validators.required],
+      phone: [
+        '',
+        [Validators.required, Validators.pattern(/^[6-9][0-9]{9}$/)]
+      ],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['']
+    });
+  }
+
+  onSubmit() {
+    this.submitted = true;
+
+    if (this.bookForm.invalid) return;
+
+    console.log('Form Data:', this.bookForm.value);
+
+    // Show success toast
+    alert('Thank you! We will reach you shortly.');
+
+    // Optionally reset the form
+    this.bookForm.reset();
+    this.submitted = false;
   }
 }
