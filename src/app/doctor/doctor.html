@@ -35,58 +35,43 @@
   </div>
 </div>
 
-<div class="approach-section">
-  <div class="approach-content">
-    <div class="approach-image">
-      <img src="./doctor-stethoscope.png" alt="Stethoscope" />
-    </div>
-    <div class="approach-text">
-      <h3>Approach</h3>
-      <p>
-        Dr. Bhavya is known for her attentive consultations, clear diagnosis and focus on long-term wellness.
-        She emphasizes early intervention and patient education to empower individuals to take charge of their health.
-      </p>
-    </div>
-  </div>
-</div>
-<!-- <div class="float-carousel">
-  <div
-    class="card"
-    *ngFor="let card of visibleCards; let i = index"
-    [ngClass]="{
-      'front': i === 0,
-      'float-in': i === 1 && direction === 'next',
-      'float-in-left': i === 1 && direction === 'prev'
-    }"
-    [ngStyle]="{ 'background-color': card.bgColor}"
-  >
-  <div class="author">
-    <img [src]="card.avatar" alt="{{ card.name }}" />
-    <div>
-      <h4>{{ card.message }}</h4>
+<section class="approach-container">
+  <div class="approach-section">
+    <div class="approach-content">
+      <div class="approach-image">
+        <img src="./doctor-stethoscope.png" alt="Stethoscope" />
+      </div>
+      <div class="approach-text">
+        <h3>Approach</h3>
+        <p>
+          Dr. Bhavya is known for her attentive consultations, clear diagnosis and focus on long-term wellness.
+          She emphasizes early intervention and patient education to empower individuals to take charge of their health.
+        </p>
+      </div>
     </div>
   </div>
-    <p class="quote">{{ card.role }}</p>
+</section>
+
+<section class="specialites-section">
+  <h2>Specialties</h2>
+  <div class="card-grid">
+    <div class="card"
+         *ngFor="let card of cards"
+         [ngStyle]="{ 'background-color': card.bgColor }">
+      <div class="author">
+        <img [src]="card.avatar" alt="{{ card.name }}" />
+        <div>
+          <h4>{{ card.message }}</h4>
+        </div>
+      </div>
+      <p class="quote">{{ card.role }}</p>
+    </div>
   </div>
-
-  <button class="nav prev" (click)="prev()">&#10094;</button>
-  <button class="nav next" (click)="next()">&#10095;</button>
-</div> -->
+</section>
 
 
 
-<!-- <ul class="cards">
-  <li
-    *ngFor="let card of cards; let i = index"
-    class="card"
-    [ngClass]="getCardClass(i)"
-    (click)="onCardClick(i)"
-  >
-    <h1>{{ card.title }}</h1>
-    <p>{{ card.content }}</p>
-  </li>
-</ul>
 
 
-<button (click)="clickNext()">Next</button> -->
+
 

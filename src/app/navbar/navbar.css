@@ -9,7 +9,7 @@
   font-family: Poppins;
   height: 100px;
   position: fixed;
-  top:0;
+  top: 0;
   z-index: 1000000000000000;
   width: 100%;
 }
@@ -116,8 +116,9 @@ a .active {
   font-weight: bold;
 }
 
-.dropdown{
+.dropdown {
   width: 71px;
+  transition: 0.3s ease;
 }
 .doctor-dropdown {
   /* position: relative; */
@@ -137,8 +138,18 @@ a .active {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* animation properties */
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.4s ease;
   }
-
+  /* Shown state */
+  .doctor-card-dropdown.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
   .doctor-card {
     width: 200px;
     text-align: center;

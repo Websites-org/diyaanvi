@@ -126,7 +126,7 @@
   max-width: 1000px;
   margin: -120px auto 0;
   position: relative;
-  background: white;
+  background: transparent;
   border-radius: 20px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 
@@ -193,7 +193,7 @@
   align-items: center;
   max-width: 1200px;
   margin: auto;
-  gap: 2rem;
+  gap: 4rem;
   width: 100%;
 }
 
@@ -284,6 +284,11 @@
   font-weight: 500;
   line-height: 26px; /* 144.444% */
   margin-bottom: 1rem;
+}
+
+.about-image{
+  width: 100%;
+  padding: 0 3%;
 }
 .doctors-section {
   background-color: #01132f;
@@ -835,6 +840,7 @@ textarea:focus {
     flex-direction: column;
     align-items: center;
     text-align: center;
+
   }
 
   .about-text {
@@ -977,6 +983,7 @@ textarea:focus {
   }
   .contact-container {
     flex-direction: column;
+    align-items: center;
   }
 
   .appointment-form {

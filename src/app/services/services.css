@@ -139,7 +139,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .specialty-text h3 {
@@ -149,7 +149,8 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .specialty-text p {

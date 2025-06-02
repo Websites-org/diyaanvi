@@ -15,7 +15,7 @@
         <li class="dropdown" (click)="openDropdown()">
           <a href="javascript:void(0)">Doctors</a>
           <ul class="doctor-dropdown">
-            <div class="doctor-card-dropdown" *ngIf="showDoctorDropdown">
+            <div class="doctor-card-dropdown" [ngClass]="{ 'show': showDoctorDropdown }">
               <div class="doctor-card" *ngFor="let doctor of doctors">
                 <a [routerLink]="doctor.link" routerLinkActive="active">
                   <div class="image-mask">
