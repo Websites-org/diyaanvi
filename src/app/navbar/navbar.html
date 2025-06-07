@@ -1,6 +1,6 @@
 <header class="top-bar">
     <div class="logo">
-      <img routerLink="/" src="./nav-logo.png" alt="DiyaanviClinic" />
+      <img routerLink="/" src="./nav-logo.svg" alt="DiyaanviClinic" />
     </div>
   
     <!-- Hamburger button for mobile -->
@@ -37,7 +37,7 @@
   </header>
   
   <!-- Mobile Bottom Drawer Menu -->
-  <div class="bottom-menu"  *ngIf="menuOpen" [class.active]="menuOpen">
+  <div class="bottom-menu" [class.active]="menuOpen">
     <ul class="menu-items">
       <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">Home</a></li>
       <li>

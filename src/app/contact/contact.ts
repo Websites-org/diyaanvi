@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact',
@@ -23,18 +24,51 @@ export class Contact {
     });
   }
 
+  // onSubmit() {
+  //   this.submitted = true;
+
+  //   if (this.bookForm.invalid) return;
+
+  //   console.log('Form Data:', this.bookForm.value);
+
+  //   // Show success toast
+  //   alert('Thank you! We will reach you shortly.');
+
+  //   // Optionally reset the form
+  //   this.bookForm.reset();
+  //   this.submitted = false;
+  // }
   onSubmit() {
     this.submitted = true;
-
+  
     if (this.bookForm.invalid) return;
-
-    console.log('Form Data:', this.bookForm.value);
-
-    // Show success toast
-    alert('Thank you! We will reach you shortly.');
-
-    // Optionally reset the form
-    this.bookForm.reset();
-    this.submitted = false;
+  
+    const formData = this.bookForm.value;
+  
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message
+    };
+  
+    emailjs.send(
+      'service_mmihjzg',      // Replace with your actual Service ID
+      'template_5172r6h',     // Replace with your actual Template ID
+      templateParams,
+      'V8kegPap5_0uOD63r'       // Replace with your actual public key
+    ).then(
+      (response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        alert('Thank you! We will reach you shortly.');
+        this.bookForm.reset();
+        this.submitted = false;
+      },
+      (err) => {
+        console.error('FAILED...', err);
+        alert('Oops! Something went wrong. Please try again.');
+      }
+    );
   }
+  
 }

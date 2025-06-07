@@ -216,7 +216,7 @@
     </div>
 </section>
 
-<section *ngIf="isMobile" class="card-carousel" (mouseenter)="pauseRotation()" (mouseleave)="resumeRotation()">
+<!-- <section *ngIf="isMobile" class="card-carousel" (mouseenter)="pauseRotation()" (mouseleave)="resumeRotation()">
     <div class="card-wrapper">
         <div class="card" *ngIf="cards.length" [ngStyle]="{ 'background-color': cards[currentIndex].bgColor }">
             <img [src]="cards[currentIndex].img">
@@ -229,7 +229,33 @@
     <div [routerLink]="'/services'" *ngIf="isMobile" class="button know-more">
         <div class="know-more-btn">Know More</div>
     </div>
-</section>
+</section> -->
+
+<section *ngIf="isMobile" class="card-carousel">
+    <div class="carousel-container">
+      <button class="carousel-arrow left" (click)="prevCard()"><img class="carousel-arrow" src='./left-arrow.png'></button>
+  
+      <div class="card-wrapper">
+        <div
+          class="card"
+          *ngIf="cards.length"
+          [ngStyle]="{ 'background-color': cards[currentIndex].bgColor }"
+        >
+          <img [src]="cards[currentIndex].img" />
+          <h3>{{ cards[currentIndex].title }}</h3>
+          <h4>{{ cards[currentIndex].text }}</h4>
+          <p>{{ cards[currentIndex].content }}</p>
+        </div>
+      </div>
+  
+      <button class="carousel-arrow right" (click)="nextCard()"><img class="carousel-arrow" src='./right-arrow.png'></button>
+    </div>
+  
+    <div [routerLink]="'/services'" class="button know-more">
+      <div class="know-more-btn">Know More</div>
+    </div>
+  </section>
+  
 
 <section class="why-choose-section">
     <h2>Why Choose Diyaanvi Multi-Speciality Clinic?</h2>

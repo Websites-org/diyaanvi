@@ -304,10 +304,10 @@ line-height: normal;
   align-items: center;
   padding: 3rem rem;
 }
-.card-grid {
+/* .card-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  gap: 20px; /* spacing between cards */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
   padding: 20px 4rem;
 }
 
@@ -338,7 +338,170 @@ font-size: 24px;
 font-style: normal;
 font-weight: 600;
 line-height: normal;
+} */
+/* .card-grid {
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+  height: 300px;
+  padding: 20px 4rem;
+} */
+.card-grid {
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+  padding: 2rem 4rem;
+  height: 320px;
 }
+
+/* Base card styling */
+.card {
+  background-color: #444;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  flex: 0 0 60px; /* collapsed width */
+}
+
+/* Expand when hovered */
+.card:hover {
+  flex: 1 1 auto;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+
+/* collapsed-view styles */
+.collapsed-view {
+  position: relative;
+  height: 3200px;
+  width: 100%;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Heading stays vertical and centered */
+.collapsed-view h4 {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg); /* makes it top-to-bottom */
+  margin: 0;
+  color: #FFF;
+font-family: "Red Hat Display";
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+/* Image stays upright at the bottom */
+.collapsed-view img {
+  writing-mode: initial;
+  transform: none;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  padding-top: 20px;
+}
+
+
+/* .collapsed-view img {
+  width: 30px;
+  height: 30px;
+} */
+
+/* Hide collapsed view on hover */
+.card:hover .collapsed-view {
+  display: none;
+}
+
+/* expanded-view hidden by default */
+/* .expanded-view {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  height: 270px;
+  width: 300px;
+} */
+.expanded-view {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 270px;
+  height: 100%; /* match the parent's height */
+  box-sizing: border-box;
+}
+
+.expanded-view h4{
+  color: #FFF;
+font-family: "Red Hat Display";
+font-size: 18px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+.card {
+  padding: 0; /* Ensure no padding affects height by default */
+}
+
+.card:hover {
+  padding: 1rem; /* Optional, but balance this visually */
+  box-sizing: border-box;
+}
+
+.card, .collapsed-view, .expanded-view {
+  box-sizing: border-box;
+}
+
+.card:hover .collapsed-view {
+  display: none;
+}
+
+.card:hover .expanded-view {
+  display: flex;
+}
+
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.author img {
+  width: 40px;
+  height: 40px;
+}
+
+.quote {
+  color: #FFF;
+  text-align: center;
+  font-family: "Red Hat Display";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
 .nav {
   position: absolute;
   top: 50%;
@@ -501,9 +664,31 @@ line-height: normal;
   }
   .author{
     font-size: 16px;
+    text-align: center;
   }
   .card-grid {
     grid-template-columns: 1fr;
     padding: 20px 1rem;
+  }
+  .quote{
+    font-size: 10px;
+    margin: 0;
+  }
+  .collapsed-view, .expanded-view h4{
+    font-size: 12px;
+    margin: 0;
+    text-align: center;
+  }
+  .collapsed-view h4{
+    font-size: 12px;
+    margin: 0;
+  }
+  .card{
+    height: 250px;
+  }
+  .author{
+    display: flex;
+    flex-direction: column;
+
   }
 }
