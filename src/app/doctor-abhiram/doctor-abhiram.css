@@ -198,7 +198,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;;
+    align-items: center;
   }
 }
 .approach-image img {
@@ -266,27 +266,28 @@
     }
   }
 }
-.specialites-section{
+.specialites-section {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  background-color: #FFF8F8;
+  background-color: #fff8f8;
+  margin: auto;
 }
-.specialites-section{
-  h2{
+.specialites-section {
+  h2 {
     color: #000;
-font-family: "Red Hat Display";
-font-size: 34px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
+    font-family: "Red Hat Display";
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
   }
 }
-.approach-container{
-  padding: 2rem 5rem; 
-  background-color: #FFF8F8;
+.approach-container {
+  padding: 2rem 5rem;
+  background-color: #fff8f8;
 }
 /* .float-carousel{
   display: flex;
@@ -399,12 +400,12 @@ line-height: normal;
   writing-mode: vertical-rl;
   transform: rotate(180deg); /* makes it top-to-bottom */
   margin: 0;
-  color: #FFF;
-font-family: "Red Hat Display";
-font-size: 14px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
+  color: #fff;
+  font-family: "Red Hat Display";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 /* Image stays upright at the bottom */
@@ -419,7 +420,6 @@ line-height: normal;
   height: 30px;
   padding-top: 20px;
 }
-
 
 /* .collapsed-view img {
   width: 30px;
@@ -451,13 +451,13 @@ line-height: normal;
   box-sizing: border-box;
 }
 
-.expanded-view h4{
-  color: #FFF;
-font-family: "Red Hat Display";
-font-size: 18px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
+.expanded-view h4 {
+  color: #fff;
+  font-family: "Red Hat Display";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 .card {
   padding: 0; /* Ensure no padding affects height by default */
@@ -468,7 +468,9 @@ line-height: normal;
   box-sizing: border-box;
 }
 
-.card, .collapsed-view, .expanded-view {
+.card,
+.collapsed-view,
+.expanded-view {
   box-sizing: border-box;
 }
 
@@ -479,7 +481,6 @@ line-height: normal;
 .card:hover .expanded-view {
   display: flex;
 }
-
 
 .author {
   display: flex;
@@ -493,7 +494,7 @@ line-height: normal;
 }
 
 .quote {
-  color: #FFF;
+  color: #fff;
   text-align: center;
   font-family: "Red Hat Display";
   font-size: 18px;
@@ -524,15 +525,13 @@ line-height: normal;
   right: 10px;
 }
 
-
-
 .card--current {
   cursor: auto;
   user-select: auto;
   position: relative;
   z-index: 10;
   opacity: 1;
-  transform: none; 
+  transform: none;
 }
 
 .card--next {
@@ -541,7 +540,7 @@ line-height: normal;
 }
 
 .card--out {
-  animation: card-out 0.6s cubic-bezier(.8, .2, .1, 0.8);
+  animation: card-out 0.6s cubic-bezier(0.8, 0.2, 0.1, 0.8);
   transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
   z-index: 1;
   background: #bbb;
@@ -570,7 +569,6 @@ line-height: normal;
   z-index: 0;
 }
 
-
 @keyframes card-out {
   0% {
     z-index: 20;
@@ -584,6 +582,234 @@ line-height: normal;
   }
   100% {
     transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 300px;
+  max-width: 785px;
+  gap: 20px;
+  /* padding: 2rem; */
+}
+
+@media (max-width: 1024px) {
+  .main {
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+    max-width: 300px;
+  }
+}
+
+.column {
+  width: 25%;
+  transition: width 0.5s, height 0.5s;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 10px;
+
+
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: 120px;
+
+    &.expanded {
+      height: 270px !important;
+    }
+  }
+
+  &.expanded {
+    width: 100%;
+
+    &::after {
+      content: "";
+      /* background: rgba(0, 0, 0, 0.5); */
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+  }
+}
+
+.inner-element {
+  opacity: 1;
+  transition: opacity 0s;
+  z-index: 2;
+  padding: 20px;
+  background: transparent;
+  position: absolute;
+  left: 0;
+  bottom: 100px;
+
+  h2 {
+    color: #FFF;
+    font-family: "Red Hat Display";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  p {
+    color: #FFF;
+    text-align: center;
+    font-family: "Red Hat Display";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  &.active {
+    opacity: 1;
+    transition: opacity 0.5s 0.5s;
+  }
+}
+
+.icons {
+  position: absolute;
+  bottom: 20px;
+  left: 18px;
+  font-size: 24px;
+  padding: 20px;
+  /* background: white; */
+  /* z-index: 2; */
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inner-element {
+  opacity: 1;
+  transition: opacity 0s;
+  z-index: 2;
+  padding: 20px;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &.active {
+    opacity: 1;
+    transition: opacity 0.5s 0.4s;
+  }
+
+  /* .card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+
+    i {
+      font-size: 28px;
+      background: white;
+      color: black;
+      padding: 10px;
+      border-radius: 50%;
+      width: 46px;
+      height: 46px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h2 {
+      color: #FFF;
+      font-family: "Red Hat Display";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      margin: 0;
+    }
+  } */
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.5rem;
+    flex-direction: row;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    transition: all 0.5s ease;
+  
+    img {
+      width: 36px;
+      height: 36px;
+    }
+  
+    h2 {
+      font-size: 14px;
+      color: #fff;
+      margin: 0;
+    }
+  
+
+    .expanded & {
+      writing-mode: horizontal-tb;
+      transform: none;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+  
+      h2 {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      writing-mode: horizontal-tb !important;
+      transform: none !important;
+      flex-direction: row !important;
+      justify-content: flex-start;
+      align-items: center;
+  
+      h2 {
+        font-size: 16px;
+      }
+    }
+  }
+  
+  .card-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      color: #FFF;
+      text-align: center;
+      font-family: "Red Hat Display";
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      margin: 0;
+    }
   }
 }
 
@@ -649,47 +875,145 @@ line-height: normal;
     }
   }
 
-  .approach-container{
+  .approach-container {
     padding: 0.5rem;
   }
-  .approach-section{
+  .approach-section {
     margin: 7rem 1rem;
     margin-bottom: 3rem;
   }
-  .float-carousel{
+  .float-carousel {
     width: 100%;
   }
-  .quote{
+  .quote {
     font-size: 20px;
-
   }
-  .author{
+  .author {
     font-size: 16px;
     margin: 0;
   }
-  .card-grid {
+  /* .card-grid {
     grid-template-columns: 1fr;
     padding: 20px 1rem;
-  }
-  .quote{
+  } */
+  .quote {
     font-size: 10px;
     margin: 0;
   }
-  .collapsed-view, .expanded-view h4{
+  .collapsed-view,
+  .expanded-view h4 {
     font-size: 12px;
     margin: 0;
     text-align: center;
   }
-  .collapsed-view h4{
+  .collapsed-view h4 {
     font-size: 12px;
     margin: 0;
   }
-  .card{
+  .card {
     height: 250px;
   }
-  .author{
+  .author {
     display: flex;
     flex-direction: column;
-
   }
+  /* .collapsed-view{
+    writing-mode: horizontal-tb;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    h4 {
+      writing-mode: horizontal-tb;
+      transform: none;
+      font-size: 12px;
+    }
+
+    img {
+      position: static;
+      transform: none;
+      margin-top: 10px;
+    }
+  }
+  .card-grid{
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    padding: 1rem;
+    height: auto;
+  }
+  .card {
+
+      flex: 0 0 auto;
+      width: 200px;
+      height: 250px;
+    } */
+  /* @media (max-width: 768px) {
+      .card-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+    
+      .card {
+        flex: 1 1 100%;
+        max-height: 60px;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        border-radius: 12px;
+        cursor: pointer;
+        padding: 0;
+        position: relative;
+      }
+    
+      .card.expanded {
+        max-height: 3200px;
+        padding: 1rem;
+      }
+    
+      .card .collapsed-view {
+        writing-mode: horizontal-tb !important;
+        text-orientation: initial !important;
+        display: flex ;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 1rem !important;
+      }
+    
+      .card .collapsed-view h4 {
+        transform: none !important;
+        writing-mode: horizontal-tb !important;
+        font-size: 14px !important;
+        margin: 0 !important;
+        text-align: left !important;
+      }
+    
+      .card .collapsed-view img {
+        transform: none !important;
+        writing-mode: initial !important;
+        position: static !important;
+        margin-left: 10px !important;
+        width: 30px !important;
+        height: 30px !important;
+      }
+    
+      /* Show/hide logic */
+  /* .card .expanded-view {
+        display: none;
+        flex-direction: column;
+        margin-top: 1rem;
+      }
+      .card.expanded {
+        height: 1300px; 
+      }
+    
+      .card.expanded .expanded-view {
+        display: flex;
+      }
+      .card-expanded .collapsed-view {
+        display: none;
+      }
+    }  */
 }

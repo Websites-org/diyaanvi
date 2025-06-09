@@ -36,7 +36,7 @@ export class Home {
   startRotation() {
     this.intervalId = setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % this.cards.length;
-    }, 5000); // 5 seconds
+    }, 15000); // 5 seconds
   }
   scrollToAbout(): void {
     this.viewportScroller.scrollToAnchor('about');

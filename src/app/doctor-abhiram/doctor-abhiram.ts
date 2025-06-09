@@ -38,5 +38,41 @@ export class DoctorAbhiram {
       bgColor:'#735D78'
     }
   ];
-  
+//   expandedIndex: number | null = null;
+
+// toggleCard(index: number) {
+//   this.expandedIndex = this.expandedIndex === index ? null : index;
+// }
+expandedIndex: number | null = 0;
+
+  // cards = [
+  //   {
+  //     title: 'Coastal Caves',
+  //     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.`,
+  //     icon: 'fa-gem',
+  //     background: 'url(http://dmmotionarts.com/wp-content/uploads/2024/01/anders-jilden-cYrMQA7a3Wc-unsplash.jpg)'
+  //   },
+  //   {
+  //     title: 'Fungal & Allergic',
+  //     description: `Consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.`,
+  //     icon: 'fa-heart',
+  //     background: 'url(http://dmmotionarts.com/wp-content/uploads/2024/02/Footer-1.jpg)'
+  //   },
+  //   {
+  //     title: 'Ocean Waves',
+  //     description: `Pulvinar dapibus leo. Lorem ipsum dolor sit amet.`,
+  //     icon: 'fa-water',
+  //     background: 'url(http://dmmotionarts.com/wp-content/uploads/2024/03/nathan-dumlao-ciO5L8pin8A-unsplash-1.jpg)'
+  //   },
+  //   {
+  //     title: 'Mountain Trails',
+  //     description: `Dapibus leo. Lorem ipsum dolor sit amet.`,
+  //     icon: 'fa-tree',
+  //     background: 'url(http://dmmotionarts.com/wp-content/uploads/2024/01/pietro-de-grandi-T7K4aEPoGGk-unsplash.jpg)'
+  //   }
+  // ];
+
+  expandCard(index: number): void {
+    this.expandedIndex = index;
+  }
 }
