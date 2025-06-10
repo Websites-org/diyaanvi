@@ -139,9 +139,9 @@
         <div class="inner-element" [ngClass]="{ 'active': expandedIndex === i }">
           <div class="card-header">
             <img class="fa-regular" [src]="card.avatar"/>
-            <h2>{{ card.message }}</h2>
+            <h2 [ngClass]="{ 'h2-expanded': expandedIndex === i }">{{ card.message }}</h2>
           </div>
-          <div class="card-body" *ngIf="expandedIndex === i">
+          <div class="card-body" [ngClass]="{ 'p-expanded': expandedIndex === i }" *ngIf="expandedIndex === i">
             <p>{{ card.role }}</p>
           </div>
         </div>
