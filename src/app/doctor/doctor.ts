@@ -41,6 +41,11 @@ export class Doctor {
       bgColor:'#E29578'
     }
   ];
+  expandedIndex: number | null = 0;
 
+
+  expandCard(index: number): void {
+    this.expandedIndex = index;
+  }
 }
 

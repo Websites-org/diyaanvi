@@ -54,38 +54,27 @@
 
 <section class="specialites-section">
   <h2>Specialties</h2>
-  <div class="card-grid">
-    <!-- <div class="card"
-         *ngFor="let card of cards"
-         [ngStyle]="{ 'background-color': card.bgColor }">
-      <div class="author">
-        <img [src]="card.avatar" alt="{{ card.name }}" />
-        <div>
-          <h4>{{ card.message }}</h4>
+    <div class="main">
+      <div
+        class="column"
+        *ngFor="let card of cards; let i = index"
+        [ngClass]="{ 'expanded': expandedIndex === i }"
+        [ngStyle]="{ 'background': card.bgColor }"
+        (click)="expandCard(i)"
+      >
+
+      <div class="inner-element" [ngClass]="{ 'active': expandedIndex === i }">
+        <div class="card-header">
+          <img class="fa-regular" [src]="card.avatar"/>
+          <h2 [ngClass]="{ 'h2-expanded': expandedIndex === i }">{{ card.message }}</h2>
+        </div>
+        <div class="card-body" [ngClass]="{ 'p-expanded': expandedIndex === i }" *ngIf="expandedIndex === i">
+          <p>{{ card.role }}</p>
         </div>
       </div>
-      <p class="quote">{{ card.role }}</p>
-    </div> -->
-    <div class="card" *ngFor="let card of cards" [ngStyle]="{ 'background-color': card.bgColor }">
-      <!-- Collapsed Content -->
-      <div class="collapsed-view">
-        <img [src]="card.avatar" alt="{{ card.name }}" />
-        <h4>{{ card.message }}</h4>
-      </div>
-    
-      <!-- Expanded Content -->
-      <div class="expanded-view">
-        <div class="author">
-          <img [src]="card.avatar" alt="{{ card.name }}" />
-          <div>
-            <h4>{{ card.message }}</h4>
-          </div>
-        </div>
-        <p class="quote">{{ card.role }}</p>
-      </div>
+  
     </div>
-    
-  </div>
+    </div>
 </section>
 
 
