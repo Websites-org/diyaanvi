@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact',
@@ -9,10 +10,16 @@ import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
   styleUrl: './contact.css'
 })
 export class Contact {
+
+  ngOnInit() {
+    this.titleService.setTitle('Contact Diyaanvi Clinic | Book an Appointment in Uttarahalli, Bangalore');
+    this.metaService.updateTag({ name: 'description', content: 'Reach out to Diyaanvi Clinic in Uttarahalli, Bangalore for expert skin, diabetes and general care. Book your visit today.' });
+  }
+
   bookForm: FormGroup;
   submitted = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private titleService: Title, private metaService: Meta) {
     this.bookForm = this.fb.group({
       name: ['', Validators.required],
       phone: [
@@ -40,18 +47,18 @@ export class Contact {
   // }
   onSubmit() {
     this.submitted = true;
-  
+
     if (this.bookForm.invalid) return;
-  
+
     const formData = this.bookForm.value;
-  
+
     const templateParams = {
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
       message: formData.message
     };
-  
+
     emailjs.send(
       'service_mmihjzg',      // Replace with your actual Service ID
       'template_5172r6h',     // Replace with your actual Template ID
@@ -70,5 +77,5 @@ export class Contact {
       }
     );
   }
-  
+
 }

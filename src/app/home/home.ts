@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ViewportScroller } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -15,18 +16,22 @@ export class Home {
     { title: 'Laboratory & Diagnostics', text: 'Accurate Results. Trusted Methods.', content: 'Our in-house laboratory is equipped with advanced diagnostic tools to support timely and precise evaluations. From routine blood tests to specialized diagnostics, all procedures are carried out by trained professionals following strict quality standards. We help you get the clarity you need to make informed decisions about your health.',img:'./service-2.svg', bgColor:'#E4BBFF' },
     { title: 'ECG (Electrocardiogram)', text: 'Quick, Painless Cardiac Testing', content: 'Our ECG service offers a non-invasive, reliable method to assess your heart\'s electrical activity. Whether you\'re undergoing a routine heart check-up or need further cardiac evaluation, our trained staff ensures the procedure is smooth, efficient, and results are delivered with clarity.',img:'./service-3.svg', bgColor:'#BBFFC1' },
     { title: 'Nursing Care Services', text: 'Supportive Care with a Personal Touch', content: 'Our nursing team is committed to delivering compassionate, professional care that supports every patient’s recovery and comfort. Whether you need assistance during your visit or post-procedure care, our nursing staff is here to ensure your experience at Diyaanvi Clinic is safe, respectful and reassuring.',img:'./service-4.svg',bgColor:'#FFD6BB' }
-  ];
+  ]
 
   currentIndex = 0;
   intervalId: any;
   isMobile:boolean = false;
 
   ngOnInit() {
+    // meta
+
+    this.titleService.setTitle('Diyaanvi Clinic | Dermatologist & General Physician in Bangalore');
+    this.metaService.updateTag({ name: 'description', content: 'Expert dermatologist, diabetologist & general physician in Uttarahalli, Bangalore. Visit Diyaanvi Multi-Speciality Clinic today.' });
+
     const isMobile = window.innerWidth <= 768;
     console.log(isMobile)
     this.isMobile = isMobile;
-    this.startRotation();
-    
+    this.startRotation();    
   }
 
   ngOnDestroy() {
@@ -52,7 +57,7 @@ export class Home {
   bookForm: FormGroup;
   submitted = false;
 
-  constructor(private fb: FormBuilder, private viewportScroller: ViewportScroller) {
+  constructor(private fb: FormBuilder, private viewportScroller: ViewportScroller, private titleService: Title, private metaService: Meta) {
     this.bookForm = this.fb.group({
       name: ['', Validators.required],
       phone: [

@@ -7,8 +7,8 @@
       <div class="empty-section"></div>
       <div class="intro-section">
        <div class="name">
-        <img src="./stethoscope.png" alt="Icon" />
-        <h2>Dr. Bhavya N <span class="degree">MBBS, MD</span></h2>
+        <img src="./stethoscope.png" alt="Diabetes treatment by Dr. Divya at Diyaanvi Clinic, Uttarahalli" />
+        <h1 class="doc_name">Dr. Bhavya N <span class="degree">MBBS, MD</span></h1>
       </div>
         <p class="title">Founder & Consultant Physician</p>
         <p class="experience">Years of Experience : 9+</p>
@@ -17,7 +17,7 @@
 
     <div class="about-box">
       <div class="image-section">
-        <img src="./dr-bhavya.png" alt="Dr. Bhavya N" />
+        <img src="./dr-bhavya.png" alt="Dr. Bhavya MBBS MD - Expert in General Medicine at Diyaanvi Clinic, Uttarahalli" />
       </div>
       <div class="about-section">
         <h3>About</h3>
@@ -39,7 +39,7 @@
   <div class="approach-section">
     <div class="approach-content">
       <div class="approach-image">
-        <img src="./doctor-stethoscope.png" alt="Stethoscope" />
+        <img src="./doctor-stethoscope.png" alt="Stethoscope symbolizing general medical care at Diyaanvi Clinic, Uttarahalli" />
       </div>
       <div class="approach-text">
         <h3>Approach</h3>
@@ -65,7 +65,7 @@
 
       <div class="inner-element" [ngClass]="{ 'active': expandedIndex === i }">
         <div class="card-header">
-          <img class="fa-regular" [src]="card.avatar"/>
+          <img class="fa-regular" [src]="card.avatar" [alt]="card.alt"/>
           <h2 [ngClass]="{ 'h2-expanded': expandedIndex === i }">{{ card.message }}</h2>
         </div>
         <div class="card-body" [ngClass]="{ 'p-expanded': expandedIndex === i }" *ngIf="expandedIndex === i">

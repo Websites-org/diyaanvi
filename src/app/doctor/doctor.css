@@ -61,7 +61,7 @@
       height: 46px;
     }
 
-    h2 {
+    h1 {
       color: #13366d;
       font-family: "Red Hat Display";
       font-size: 40px;
@@ -69,6 +69,7 @@
       font-weight: 700;
       line-height: normal;
       margin: 0;
+      width: auto;
 
       .degree {
         margin-left: 10px;
@@ -866,6 +867,7 @@ line-height: normal;
     padding: 0;
     margin-top: -50px;
     flex-direction: column;
+    gap: 30px;
 
     .about-box {
       padding: 2rem 1rem;
@@ -874,7 +876,7 @@ line-height: normal;
       height: auto;
       margin: 0px;
       margin-top: 18rem;
-
+      
       .about-section {
         padding: 0;
       }
@@ -883,13 +885,18 @@ line-height: normal;
       flex-direction: column;
       align-items: center;
       text-align: center;
+      gap: 40px;
 
       .intro-section {
         text-align: center;
         align-items: center;
+
+        .name{
+          gap: 30px;
+        }
       }
 
-      h2 {
+      h1 {
         font-size: 28px;
         display: flex;
         flex-direction: column;
