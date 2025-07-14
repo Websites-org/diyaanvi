@@ -24,7 +24,7 @@ export class Doctor {
       message: 'General Medicine',
       name: 'Drew White',
       role: 'Comprehensive diagnosis and treatment of common illnesses, infections, and systemic conditions with a focus on long-term health and early intervention.',
-      avatar: './icon-1.png',
+      avatar: './preventive-wellness-care-diayaanvi-clinic.png',
       bgColor: '#588157',
       alt : 'General Medicine services at Diyaanvi Clinic, Uttarahalli, Bangalore'
     },
@@ -32,7 +32,7 @@ export class Doctor {
       message: 'Preventive Health Management',
       name: 'Brendan McDonald',
       role: 'Health screenings, routine check-ups, and risk assessments designed to detect conditions early and promote proactive wellness.',
-      avatar: './icon-2.png',
+      avatar: './general-medicine-services-diayaanvi-clinic.png',
       bgColor: '#0077B6',
       alt : "Preventive health check-ups and wellness care at Diyaanvi Clinic, Bangalore"
     },
@@ -40,7 +40,7 @@ export class Doctor {
       message: 'Diabetology',
       name: 'Amber Stone',
       role: 'Expert management of diabetes and related complications through clinical evaluation, lifestyle counselling, and ongoing support.',
-      avatar: './icon-3.png',
+      avatar: './diabetes-care-diabetologist-diayaanvi-clinic.png',
       bgColor: '#735D78',
       alt: "Diabetes care and management by Diabetologist at Diyaanvi Clinic, Uttarahalli"
     }
@@ -49,7 +49,7 @@ export class Doctor {
       message: 'Lifestyle- related Conditions',
       name: 'Amber Stone',
       role: 'Targeted care for conditions like obesity, hypertension, and thyroid disorders - rooted in personalized plans for sustainable health improvements.',
-      avatar: './icon-4.png',
+      avatar: './lifestyle-condition-treatment-bangalore.png',
       bgColor: '#E29578',
       alt : "Treatment for lifestyle-related conditions at Diyaanvi Clinic in Bangalore"
     }
