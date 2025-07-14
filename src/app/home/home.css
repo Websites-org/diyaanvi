@@ -1043,10 +1043,12 @@ textarea:focus {
   }
 }
 
+
+
 @media(max-width : 1105px) {
   .content {
     margin-left: 2%;
-    top: 0;
+    top: 8%;
   }
 
   .banner-heading {
@@ -1062,7 +1064,7 @@ textarea:focus {
   }
 }
 
-@media(max-width : 945px) {
+@media(max-width : 985px) {
   .banner-bg {
     display: none;
   }
@@ -1079,13 +1081,13 @@ textarea:focus {
   }
 
   .content {
-    top: 1%;
+    top: 0%;
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: 1000px;
     position: relative;
-    margin-top: -100vh;
+    margin-top: -90vh;
     margin-left: 0;
   }
 
