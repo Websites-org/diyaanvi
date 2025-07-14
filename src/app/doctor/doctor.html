@@ -6,12 +6,14 @@
     <div class="intro">
       <div class="empty-section"></div>
       <div class="intro-section">
-       <div class="name">
-        <img src="./diabetes-treatment-dr-bhavya-bangalore.png" alt="Diabetes treatment by Dr. Divya at Diyaanvi Clinic, Uttarahalli" />
-        <h1 class="doc_name">Dr. Bhavya N <span class="degree">MBBS, MD</span></h1>
-      </div>
-        <p class="title">Founder & Consultant Physician</p>
-        <p class="experience">Years of Experience : 9+</p>
+        <div class="name">
+          <img src="./diabetes-treatment-dr-bhavya-bangalore.png" alt="Diabetes treatment by Dr. Divya at Diyaanvi Clinic, Uttarahalli" />
+          <div>
+            <h1 class="doc_name">Dr. Bhavya N <span class="degree">MBBS, MD</span></h1>
+            <p class="title">Founder & Consultant Physician</p>
+            <p class="experience">Years of Experience : 9+</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -25,11 +27,14 @@
           Dr. Bhavya N is the founder of Diyaanvi Multi-Speciality Clinic and a highly regarded consultant physician
           known for her commitment to ethical, patient-centric care. With years of experience in internal medicine, she
           specializes in managing chronic illnesses such as diabetes, hypertension, thyroid disorders and general health
-          concerns.
+          concerns.She is a gold medalist and state rank holder in MD Internal medicine in RGUHS. She has sound
+          knowledge in her field and practices evidence-based medicine providing patient centred care. Being a female
+          physician she has an extra mile of interest in women and family health care. She has keen interest in research
+          and is updated on newer aspects and recent advancements in treatment modalities.
         </p>
-       <div [routerLink]="'/contact'" class="button">
-        <button class="book-btn">Book Appointment</button>
-       </div>
+        <div [routerLink]="'/contact'" class="button">
+          <button class="book-btn">Book Appointment</button>
+        </div>
       </div>
     </div>
   </div>
@@ -54,32 +59,20 @@
 
 <section class="specialites-section">
   <h2>Specialties</h2>
-    <div class="main">
-      <div
-        class="column"
-        *ngFor="let card of cards; let i = index"
-        [ngClass]="{ 'expanded': expandedIndex === i }"
-        [ngStyle]="{ 'background': card.bgColor }"
-        (click)="expandCard(i)"
-      >
+  <div class="main">
+    <div class="column" *ngFor="let card of cards; let i = index" [ngClass]="{ 'expanded': expandedIndex === i }"
+      [ngStyle]="{ 'background': card.bgColor }" (click)="expandCard(i)">
 
       <div class="inner-element" [ngClass]="{ 'active': expandedIndex === i }">
         <div class="card-header">
-          <img class="fa-regular" [src]="card.avatar" [alt]="card.alt"/>
+          <img class="fa-regular" [src]="card.avatar" [alt]="card.alt" />
           <h2 [ngClass]="{ 'h2-expanded': expandedIndex === i }">{{ card.message }}</h2>
         </div>
         <div class="card-body" [ngClass]="{ 'p-expanded': expandedIndex === i }" *ngIf="expandedIndex === i">
           <p>{{ card.role }}</p>
         </div>
       </div>
-  
+
     </div>
-    </div>
+  </div>
 </section>
-
-
-
-
-
-
-

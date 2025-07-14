@@ -4,19 +4,21 @@
 }
 
 .department-highlight {
-  position: relative;
-  background-color: #ffffff;
-  padding: 4rem 2rem;
-  padding-left: 6rem;
-  overflow: hidden;
-  display: flex;
-  justify-content: flex-start;
-  height: 69vh;
-
-  .content-wrapper {
-    max-width: 800px;
-    z-index: 2;
+    position: relative;
+    background-color: #ffffff;
+    padding: 4rem 2rem;
+    padding-left: 6rem;
+    overflow: hidden;
     display: flex;
+    justify-content: flex-start;
+    height: 69vh;
+    min-height: 70vh;
+  
+    .content-wrapper {
+      max-width: 800px;
+      z-index: 2;
+      display: flex
+;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -476,6 +478,7 @@ h1 {
 
     .background-shapes-1 {
       bottom: -75%;
+      height: 100%;
     }
   }
 
