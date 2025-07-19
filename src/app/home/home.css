@@ -571,11 +571,13 @@
   justify-content: center;
   align-items: center;
 }
+
 .book-button {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
+
 .book-btn {
   /* margin-top: 1.5rem; */
   padding: 10px 15px;
@@ -597,6 +599,7 @@
   line-height: normal;
 
 }
+
 .know-more-btn {
   display: flex;
   width: 200px;
@@ -1036,6 +1039,121 @@ textarea:focus {
   display: none;
 }
 
+.box-bg {
+  background-color: #D9FADC;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.row-1 {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: end;
+}
+
+.row-2 {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: start;
+  margin-top: 10px;
+}
+
+.row-3 {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  margin-top: 10px;
+  margin-right: 26px;
+}
+
+.box-1 {
+  width: 130px;
+  height: 150px;
+  font-size: 17px;
+}
+
+.box-2 {
+  width: 210px;
+  height: 104px;
+  font-size: 17px;
+  text-align: center;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+}
+
+.box-3 {
+  width: 291px;
+  height: 105px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.box-4 {
+  width: 167px;
+  height: 149px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 22px;
+}
+
+.box-5 {
+  width: 141px;
+  height: 127px;
+  position: relative;
+  margin-top: -40px;
+  font-size: 16px;
+  margin-right: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.box-1 img {
+  width: 36px;
+  height: auto;
+}
+
+.box-2 img {
+  width: 42px;
+  height: auto;
+}
+
+.box-3 img {
+  width: 44px;
+  height: auto;
+}
+
+.box-4 img {
+  width: 44px;
+  height: auto;
+}
+
+.box-5 img {
+  width: 38px;
+  height: auto;
+}
+
+.box-text {
+  color: #000;
+  font-family: "Red Hat Display";
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
 @media(max-width : 1245px) {
   .banner-heading {
     font-size: 42px;
@@ -1068,6 +1186,121 @@ textarea:focus {
   .right-side img {
     width: 100%;
   }
+
+  .box-bg {
+    background-color: #D9FADC;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .row-1 {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: end;
+  }
+
+  .row-2 {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: start;
+    margin-top: 10px;
+  }
+
+  .row-3 {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-top: 10px;
+    margin-right: 26px;
+  }
+
+  .box-1 {
+    width: 130px;
+    height: 150px;
+    font-size: 17px;
+  }
+
+  .box-2 {
+    width: 210px;
+    height: 104px;
+    font-size: 17px;
+    text-align: center;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+  }
+
+  .box-3 {
+    width: 291px;
+    height: 105px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .box-4 {
+    width: 167px;
+    height: 149px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 22px;
+  }
+
+  .box-5 {
+    width: 141px;
+    height: 127px;
+    position: relative;
+    margin-top: -40px;
+    font-size: 16px;
+    margin-right: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .box-1 img {
+    width: 36px;
+    height: auto;
+  }
+
+  .box-2 img {
+    width: 42px;
+    height: auto;
+  }
+
+  .box-3 img {
+    width: 44px;
+    height: auto;
+  }
+
+  .box-4 img {
+    width: 44px;
+    height: auto;
+  }
+
+  .box-5 img {
+    width: 38px;
+    height: auto;
+  }
+
+  .box-text {
+    color: #000;
+    font-family: "Red Hat Display";
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
 }
 
 
@@ -1139,6 +1372,121 @@ textarea:focus {
   .right-side img {
     width: 70%;
   }
+
+  .box-bg {
+    background-color: #D9FADC;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .row-1 {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: end;
+  }
+
+  .row-2 {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: start;
+    margin-top: 10px;
+  }
+
+  .row-3 {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    margin-top: 10px;
+    margin-right: 26px;
+  }
+
+  .box-1 {
+    width: 130px;
+    height: 150px;
+    font-size: 17px;
+  }
+
+  .box-2 {
+    width: 210px;
+    height: 104px;
+    font-size: 17px;
+    text-align: center;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+  }
+
+  .box-3 {
+    width: 291px;
+    height: 105px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .box-4 {
+    width: 167px;
+    height: 149px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 22px;
+  }
+
+  .box-5 {
+    width: 141px;
+    height: 127px;
+    position: relative;
+    margin-top: -40px;
+    font-size: 16px;
+    margin-right: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .box-1 img {
+    width: 36px;
+    height: auto;
+  }
+
+  .box-2 img {
+    width: 42px;
+    height: auto;
+  }
+
+  .box-3 img {
+    width: 44px;
+    height: auto;
+  }
+
+  .box-4 img {
+    width: 44px;
+    height: auto;
+  }
+
+  .box-5 img {
+    width: 38px;
+    height: auto;
+  }
+
+  .box-text {
+    color: #000;
+    font-family: "Red Hat Display";
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
 
 }
 
@@ -1446,6 +1794,7 @@ textarea:focus {
     font-weight: 800;
     line-height: normal;
   }
+
   .book-button {
     justify-content: center;
   }
@@ -1457,5 +1806,90 @@ textarea:focus {
 
   .right-side img {
     width: 80%;
+  }
+
+  .box-1 {
+    width: 80px;
+    height: 9%;
+    font-size: 11px;
+  }
+
+  .box-2 {
+    width: 149px;
+    height: 61px;
+    font-size: 12px;
+  }
+
+  .box-3 {
+    width: 189px;
+    height: 61px;
+    font-size: 14px;
+  }
+
+  .box-4 {
+    width: 105px;
+    height: 92px;
+    font-size: 14px;
+  }
+
+  .box-5 {
+    width: 87px;
+    height: 78px;
+    margin-top: -30px;
+    font-size: 10px;
+
+  }
+
+  .box-1 img {
+    width: 25px;
+    height: auto;
+  }
+
+  .box-2 img {
+    width: 28px;
+    height: auto;
+  }
+
+  .box-3 img {
+    width: 31px;
+    height: auto;
+  }
+
+  .box-4 img {
+    width: 31px;
+    height: auto;
+  }
+
+  .box-5 img {
+    width: 26px;
+    height: auto;
+  }
+}
+
+@media(max-width: 360px) {
+  .box-1 {
+    width: 70px;
+    height: 85px;
+  }
+
+  .box-2 {
+    width: 129px;
+    height: 58px;
+  }
+
+  .box-3 {
+    width: 179px;
+    height: 58px;
+  }
+
+  .box-4 {
+    width: 105px;
+    height: 92px;
+  }
+
+  .box-5 {
+    width: 87px;
+    height: 78px;
+    margin-top: -30px;
   }
 }
