@@ -1,78 +1,96 @@
-<div class="about-wrapper">
+<main class="root-container">
+  <!-- banner section -->
+  <section class="banner-section">
+
+    <div>
+      <img src="/dr-bhavya-banner-bg-desktop.png" alt="" class="desktop-banner">
+      <img src="/dr-bhavya-banner-bg.png" alt="" class="mobile-banner">
+    </div>
 
 
-  <div class="info-overlay">
+    <div class="content">
+      <div class="banner-text">
 
-    <div class="intro">
-      <div class="empty-section"></div>
-      <div class="intro-section">
-        <div class="name">
-          <img src="./diabetes-treatment-dr-bhavya-bangalore.png" alt="Diabetes treatment by Dr. Divya at Diyaanvi Clinic, Uttarahalli" />
-          <div>
-            <h1 class="doc_name">Dr. Bhavya N <span class="degree">MBBS, MD</span></h1>
-            <p class="title">Founder & Consultant Physician</p>
-            <p class="experience">Years of Experience : 9+</p>
+        <h1>Dr. Bhavya N – Consultant Physician & Diabetologist</h1>
+        <p class="qualification">MBBS, MD (Internal Medicine) | Gold Medalist (RGUHS)</p>
+
+        <div class="counts">
+
+          <div class="count-box">
+            <div class="count-num">5000+</div>
+            <div class="count-for">Diabetic Patients</div>
           </div>
+
+          <div class="count-box">
+            <div class="count-num">10,000+</div>
+            <div class="count-for">Women & Family Health</div>
+          </div>
+
+          <div class="count-box">
+            <div class="count-num">3000+</div>
+            <div class="count-for">Critical Illness</div>
+          </div>
+
+        </div>
+
+        <div class="banner-button">
+          <button routerLink="/contact">Book Appointment</button>
         </div>
       </div>
     </div>
 
-    <div class="about-box">
-      <div class="image-section">
-        <img src="./dr-bhavya-mbbs-md-general-medicine.png" alt="Dr. Bhavya MBBS MD - Expert in General Medicine at Diyaanvi Clinic, Uttarahalli" />
-      </div>
-      <div class="about-section">
-        <h3>About</h3>
-        <p>
-          Dr. Bhavya N is the founder of Diyaanvi Multi-Speciality Clinic and a highly regarded consultant physician
-          known for her commitment to ethical, patient-centric care. With years of experience in <a style="color: yellow;" href="https://en.wikipedia.org/wiki/Internal_medicine" target="_blank">internal medicine</a>, she
-          specializes in managing chronic illnesses such as diabetes, hypertension, <a style="color: yellow;" href="https://en.wikipedia.org/wiki/Thyroid" target="_blank">thyroid</a> disorders and general health
-          concerns.She is a gold medalist and state rank holder in MD Internal medicine in RGUHS. She has sound
-          knowledge in her field and practices evidence-based medicine providing patient centred care. Being a female
-          physician she has an extra mile of interest in women and family health care. She has keen interest in research
-          and is updated on newer aspects and recent advancements in treatment modalities.
-        </p>
-        <div [routerLink]="'/contact'" class="button">
-          <button class="book-btn">Book Appointment</button>
-        </div>
-      </div>
+    <!-- dr image -->
+    <!-- <div class="docimage">
+      <img src="/dr-bhavya-mbbs-md-general-medicine.png" class="dr-bhavya-img" alt="">
+    </div> -->
+
+  </section>
+
+  <!-- Doctor brief profile -->
+  <section class="doctor-profile">
+    <div class="box">
+      <h2>Brief Profile About Doctor</h2>
+      <p>Dr. Bhavya N, founder and lead consultant at Diyaanvi Multi-Speciality Clinic, is a dedicated physician known
+        for her ethical, patient-centered approach. With extensive experience in internal medicine, she specializes in
+        chronic illness management and family healthcare. She remains committed to advancing patient care through
+        continuous research and embracing the latest medical innovations.</p>
     </div>
-  </div>
-</div>
+  </section>
 
-<section class="approach-container">
-  <div class="approach-section">
-    <div class="approach-content">
-      <div class="approach-image">
-        <img src="./stethoscope-general-care-diayaanvi-clinic.png" alt="Stethoscope symbolizing general medical care at Diyaanvi Clinic, Uttarahalli" />
-      </div>
-      <div class="approach-text">
-        <h3>Approach</h3>
-        <p>
-          Dr. Bhavya is known for her attentive consultations, clear diagnosis and focus on long-term wellness.
-          She emphasizes early intervention and patient education to empower individuals to take charge of their health.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+  <!-- areas of expertise -->
+  <section class="expertise">
+    <h2>Areas of Expertise:</h2>
 
-<section class="specialites-section">
-  <h2>Specialties</h2>
-  <div class="main">
-    <div class="column" *ngFor="let card of cards; let i = index" [ngClass]="{ 'expanded': expandedIndex === i }"
-      [ngStyle]="{ 'background': card.bgColor }" (click)="expandCard(i)">
-
-      <div class="inner-element" [ngClass]="{ 'active': expandedIndex === i }">
-        <div class="card-header">
-          <img class="fa-regular" [src]="card.avatar" [alt]="card.alt" />
-          <h2 [ngClass]="{ 'h2-expanded': expandedIndex === i }">{{ card.message }}</h2>
-        </div>
-        <div class="card-body" [ngClass]="{ 'p-expanded': expandedIndex === i }" *ngIf="expandedIndex === i">
-          <p>{{ card.role }}</p>
+    <div class="expertise-content">
+      <div>
+        <div class="points" *ngFor="let name of specialityName">
+          <img src="/Star.svg" alt="">
+          <div class="points-text" (mouseenter)="getImageName(name)">{{name}}</div>
         </div>
       </div>
 
+      <div class="points-image">
+        <img [src]="pointsImage" alt="Expertise of Dr. Divya in managing diabetes, thyroid, and lifestyle disorders at Diyaanvi Clinic Bangalore">
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- specialities -->
+  <section class="specialities">
+    <h2>Specialties:</h2>
+
+    <div class="speciality-wrapper">
+
+      <div class="spec-box" *ngFor="let card of cards"  [ngStyle]="{ 'background-color': card.bgColor }">
+
+        <div class="spec-head">
+          <img [src]="card.avatar" [alt]="card.alt">
+          <div class="spec-name">{{card.name}}</div>
+        </div>
+
+        <p class="spec-description">{{card.role}}</p>
+      </div>
+
+    </div>
+  </section>
+</main>

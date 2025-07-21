@@ -1,503 +1,234 @@
-.about-wrapper {
+.root-container {
   position: relative;
+}
+
+.banner-section {
+  position: relative;
+}
+
+.banner-section img {
   width: 100%;
-  max-width: 100%;
-  /* margin: 0 auto;
-  padding: 4rem 1rem; */
+  height: auto;
+  margin-top: 80px;
+}
+
+.mobile-banner {
+  display: none;
+}
+
+.content {
+  display: flex;
+  position: absolute;
+  gap: 50px;
+  margin-top: -34%;
+  margin-left: 10%;
+}
+
+.docimage img {
+  display: none;
+}
+
+.banner-text h1 {
+  color: #F3C901;
+  text-align: center;
+  font-feature-settings: 'salt' on, 'liga' off;
+  font-family: "Red Hat Display";
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 24px;
+  padding: 0;
+  margin: 0;
+  /* 137.5% */
+}
+
+.qualification {
+  color: #F3C901;
+  font-feature-settings: 'salt' on, 'liga' off;
+  font-family: "Red Hat Display";
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 900;
+  text-align: center;
+  line-height: 10px;
+}
+
+.counts {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.count-box {
+  max-width: 150px;
+}
+
+.count-num {
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.count-for {
+  color: #FFF;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.banner-button {
+  display: flex;
+  justify-content: center;
+}
+
+.banner-button button {
+  border-radius: 4px;
+  border: 2px solid #F5CA02;
+  box-shadow: 0px 2px 30px 0px rgba(0, 0, 0, 0.25);
+  width: 240px;
+  height: 46px;
+  padding: 10px 0px;
+  margin-top: 5%;
+  background-color: transparent;
+  color: #FFF;
+  text-align: center;
+  font-feature-settings: 'salt' on, 'liga' off;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+/* doctor profile */
+
+.doctor-profile {
+  padding: 0 5%;
+}
+
+.box {
+  border-radius: 30px;
+  background: #EDF6F9;
+  padding: 2%;
+}
+
+.box h2,
+.expertise h2 {
+  color: #012677;
+  font-family: "Red Hat Display";
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: center;
+}
+
+.box p {
+  color: #010E2B;
+  text-align: center;
+  font-family: "Red Hat Display";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.expertise-content {
+  display: flex;
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.specialities {
+  margin: 50px;
+  text-align: center;
+
+}
+
+.specialities h2 {
+  color: #000;
+  font-family: "Red Hat Display";
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.points {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.points img {
+  width: 35px;
+  height: auto;
+}
+
+.points-image img {
+  width: 360px;
+  height: 342px;
+  border-radius: 10px;
+}
+
+.points-text {
+  color: #000;
+  font-family: "Red Hat Display";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 35px;
+  /* 175% */
+}
+
+.speciality-wrapper {
   display: flex;
   flex-wrap: wrap;
+  gap: 30px;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 40px;
 }
 
-.image-section {
-  flex: 0 0 auto;
-  z-index: 2;
-  margin-right: -100px;
-
-  img {
-    width: 100%;
-    max-width: 430px;
-    height: auto;
-    border-radius: 12px;
-    position: relative;
-    top: -121px;
-  }
-}
-
-.info-overlay {
-  flex: 1;
-  z-index: 1;
-  padding: 4rem;
-  padding-bottom: 0;
-
-  .intro {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    width: 100%;
-
-    .empty-section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 11%;
-    }
-
-    .intro-section {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      flex-direction: column;
-    }
-    .name {
-      display: flex;
-      gap: 10px;
-    }
-    img {
-      width: 46px;
-      height: 46px;
-    }
-
-    h1 {
-      color: #13366d;
-      font-family: "Red Hat Display";
-      font-size: 40px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-      margin: 0;
-      width: auto;
-
-      .degree {
-        margin-left: 10px;
-        color: #13366d;
-        font-family: "Red Hat Display";
-        font-size: 24px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        margin-bottom: 14px;
-      }
-    }
-
-    .title,
-    .experience {
-      color: #13366d;
-      font-family: "Red Hat Display";
-      font-size: 22px;
-      font-style: normal;
-      font-weight: 800;
-      line-height: normal;
-      margin-bottom: 0;
-      margin-top: 24px;
-    }
-  }
-
-  .about-box {
-    background: linear-gradient(137deg, #2569d3 0%, #13366d 100%);
-    color: white;
-    border-radius: 20px;
-    padding: 2rem;
-    margin: 2rem;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 330px;
-    h3 {
-      color: #fff;
-      font-family: "Red Hat Display";
-      font-size: 40px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      color: #fff;
-      font-family: "Red Hat Display";
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 26px; /* 144.444% */
-    }
-    .button {
-      display: flex;
-      width: 100%;
-      justify-content: flex-end;
-      align-items: center;
-    }
-    .book-btn {
-      margin-top: 1.5rem;
-      padding: 10px 20px;
-      background-color: transparent;
-      border: 2px solid #f5ca02;
-      border-radius: 4px;
-      color: white;
-      font-size: 14px;
-      font-weight: 600;
-      box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.25);
-      cursor: pointer;
-      transition: 0.3s ease;
-      color: #fff;
-      text-align: center;
-      font-feature-settings: "salt" on, "liga" off;
-      font-family: Montserrat;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: normal;
-
-      &:hover {
-        background-color: #f5ca02;
-        color: black;
-      }
-    }
-    .about-section {
-      width: 100%;
-      padding-left: 140px;
-    }
-  }
-}
-.approach-section {
-  background-color: #edf6f9;
-  border-radius: 20px;
-  padding: 2rem;
-  /* margin: 2rem 5rem; */
-  max-width: 100%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-
-  @media (max-width: 768px) {
-    margin: 1rem 2rem;
-    margin-top: 7rem;
-  }
-}
-
-.approach-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  gap: 2rem;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    text-align: center;
-    gap: 6rem;
-  }
-}
-
-.approach-image {
-  display: flex;
-  width: 30%;
-  justify-content: center;
-    align-items: center;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;;
-  }
-}
-.approach-image img {
-  width: 70%;
-  height: auto;
-  rotate: 198deg;
-
-  @media (max-width: 768px) {
-    width: 60%;
-    position: relative;
-    bottom: 30px;
-  }
-}
-
-.approach-text {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-
-  @media (max-width: 768px) {
-    margin-top: -116px;
-    align-items: center;
-  }
-
-  h3 {
-    color: #012677;
-    font-family: "Red Hat Display";
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin-bottom: 0.5rem;
-    margin-top: 0;
-
-    @media (max-width: 768px) {
-      color: #012677;
-      font-family: "Red Hat Display";
-      font-size: 30px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-      text-align: center;
-    }
-  }
-
-  p {
-    color: #010e2b;
-    text-align: center;
-    font-family: "Red Hat Display";
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-
-    @media (max-width: 768px) {
-      color: #010e2b;
-      text-align: center;
-      font-family: "Red Hat Display";
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: normal;
-    }
-  }
-}
-.specialites-section{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  background-color: #FFF8F8;
-  padding-bottom: 40px;
-}
-.specialites-section{
-  h2{
-    color: #000;
-font-family: "Red Hat Display";
-font-size: 34px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-  }
-}
-.approach-container{
-  padding: 2rem 5rem; 
-  background-color: #FFF8F8;
-}
-/* .float-carousel{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-} */
-.float-carousel {
-  position: relative;
-  width: 50%;
-  height: 50vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 3rem rem;
-}
-/* .card-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  padding: 20px 4rem;
-}
-
-.card {
-  padding: 20px;
-  border-radius: 10px;
-  color: white;
-}
-
-.author{
-  color: #FFF;
-text-align: center;
-font-family: "Red Hat Display";
-font-size: 20px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-display: flex;
-align-items: center;
-justify-content: flex-start;
-gap: 20px;
-}
-.quote{
-  color: #FFF;
-text-align: center;
-font-family: "Red Hat Display";
-font-size: 24px;
-font-style: normal;
-font-weight: 600;
-line-height: normal;
-} */
-/* .card-grid {
-  display: flex;
-  gap: 10px;
-  overflow: hidden;
-  height: 300px;
-  padding: 20px 4rem;
-} */
-.card-grid {
-  display: flex;
-  gap: 10px;
-  overflow: hidden;
-  padding: 2rem 4rem;
-  height: 320px;
-}
-
-/* Base card styling */
-.card {
-  background-color: #444;
-  height: 100%;
-  border-radius: 12px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  flex-direction: column;
-  flex: 0 0 60px; /* collapsed width */
-}
-
-/* Expand when hovered */
-.card:hover {
-  flex: 1 1 auto;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 1rem;
-}
-
-/* collapsed-view styles */
-.collapsed-view {
-  position: relative;
-  height: 3200px;
-  width: 100%;
-  writing-mode: vertical-rl;
-  text-orientation: mixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: 600;
-  text-align: center;
-  padding: 1rem;
-}
-
-/* Heading stays vertical and centered */
-.collapsed-view h4 {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg); /* makes it top-to-bottom */
-  margin: 0;
-  color: #FFF;
-font-family: "Red Hat Display";
-font-size: 14px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-}
-
-/* Image stays upright at the bottom */
-.collapsed-view img {
-  writing-mode: initial;
-  transform: none;
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 30px;
-  height: 30px;
-  padding-top: 20px;
-}
-
-
-/* .collapsed-view img {
-  width: 30px;
-  height: 30px;
-} */
-
-/* Hide collapsed view on hover */
-.card:hover .collapsed-view {
-  display: none;
-}
-
-/* expanded-view hidden by default */
-/* .expanded-view {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 10px;
-  height: 270px;
+.spec-box {
   width: 300px;
-} */
-.expanded-view {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
+  height: 270px;
+  padding: 1%;
+  border-radius: 10px;
+}
+
+.spec-head {
+  display: flex;
   gap: 10px;
-  width: 100%;
-  max-width: 270px;
-  height: 100%; /* match the parent's height */
-  box-sizing: border-box;
-}
-
-.expanded-view h4{
-  color: #FFF;
-font-family: "Red Hat Display";
-font-size: 18px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-}
-.card {
-  padding: 0; /* Ensure no padding affects height by default */
-}
-
-.card:hover {
-  padding: 1rem; /* Optional, but balance this visually */
-  box-sizing: border-box;
-}
-
-.card, .collapsed-view, .expanded-view {
-  box-sizing: border-box;
-}
-
-.card:hover .collapsed-view {
-  display: none;
-}
-
-.card:hover .expanded-view {
-  display: flex;
-}
-
-
-.author {
-  display: flex;
   align-items: center;
-  gap: 12px;
 }
 
-.author img {
-  width: 40px;
-  height: 40px;
+.spec-head img {
+  width: 50px;
+  height: auto;
 }
 
-.quote {
+.spec-name {
+  color: #FFF;
+  text-align: center;
+  font-family: "Red Hat Display";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.spec-description {
   color: #FFF;
   text-align: center;
   font-family: "Red Hat Display";
@@ -505,462 +236,209 @@ line-height: normal;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  margin-top: 30px;
 }
 
-.nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: white;
-  border: none;
-  font-size: 2rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  z-index: 20;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
-}
-
-.nav.prev {
-  left: 10px;
-}
-
-.nav.next {
-  right: 10px;
-}
-
-
-
-.card--current {
-  cursor: auto;
-  user-select: auto;
-  position: relative;
-  z-index: 10;
-  opacity: 1;
-  transform: none; 
-}
-
-.card--next {
-  z-index: 5;
-  transform: translateY(-25px) rotate(4deg) translateX(25px) scale(1);
-}
-
-.card--out {
-  animation: card-out 0.6s cubic-bezier(.8, .2, .1, 0.8);
-  transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
-  z-index: 1;
-  background: #bbb;
-}
-.card--in {
-  animation: card-out 0.6s ease forwards;
-}
-
-@keyframes card-in {
-  0% {
-    z-index: 1; /* Behind */
-    transform: translateY(50px) scale(0.9);
-    opacity: 0.6;
+@media (max-width : 1250px) {
+  .content {
+    margin-left: 4%;
   }
-  50% {
-    z-index: 20;
+
+  .banner-text h1 {
+    font-size: 28px;
   }
-  100% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
+
+  .qualification {
+    font-size: 24px;
   }
 }
 
-.card--behind {
-  opacity: 0;
-  z-index: 0;
-}
-
-
-@keyframes card-out {
-  0% {
-    z-index: 20;
-    transform: translateY(0px) rotate(-4deg);
-  }
-  50% {
-    transform: translateY(-120%) rotate(-5deg) translateX(-40px);
-  }
-  80% {
-    z-index: 1;
-  }
-  100% {
-    transform: translateY(-50px) rotate(8deg) translateX(55px) scale(0.95);
-  }
-}
-.main {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 350px;
-  max-width: 785px;
-  gap: 10px;
-  /* padding: 2rem; */
-}
-
-@media (max-width: 1024px) {
-  .main {
-    flex-direction: column;
-    height: auto;
-    gap: 20px;
-    max-width: 300px;
-  }
-}
-
-.column {
-  width: 10%;
-  transition: width 0.5s, height 0.5s;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: center;
-  cursor: pointer;
-  background-size: cover;
-  background-position: center center;
-  border-radius: 10px;
-
-
-
-  @media (max-width: 1024px) {
-    width: 100%;
-    height: 76px;
-
-    &.expanded {
-      height: 270px !important;
-      width: 100%;
-    }
+@media(max-width : 1000px) {
+  .content {
+    margin-left: 1%;
+    margin-top: -35%;
   }
 
-  &.expanded {
-    width: 50%;
-
-    &::after {
-      content: "";
-      /* background: rgba(0, 0, 0, 0.5); */
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      z-index: 0;
-      pointer-events: none;
-    }
-    @media (max-width: 1024px) {
-      width: 100%;
-      height: 64px;
-  
-      &.expanded {
-        height: 270px !important;
-        width: 100%;
-      }
-    }
+  .banner-text h1 {
+    font-size: 24px;
   }
-}
 
-.inner-element {
-  opacity: 1;
-  transition: opacity 0s;
-  z-index: 2;
-  padding: 20px;
-  background: transparent;
-  position: absolute;
-  left: 0;
-  bottom: 100px;
-
-  h2 {
-    color: #FFF;
-    font-family: "Red Hat Display";
+  .qualification {
     font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
   }
 
-  p {
-    color: #FFF;
-    text-align: center;
-    font-family: "Red Hat Display";
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+  .count-num {
+    font-size: 30px;
   }
 
-  &.active {
-    opacity: 1;
-    transition: opacity 0.5s 0.5s;
+  .count-for {
+    font-size: 14px;
+  }
+
+  .banner-button button {
+    width: 180px;
   }
 }
 
-.icons {
-  position: absolute;
-  bottom: 20px;
-  left: 18px;
-  font-size: 24px;
-  padding: 20px;
-  /* background: white; */
-  /* z-index: 2; */
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.inner-element {
-  opacity: 1;
-  transition: opacity 0s;
-  z-index: 2;
-  padding: 20px;
-  background: transparent;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  box-sizing: border-box;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  &.active {
-    opacity: 1;
-    transition: opacity 0.5s 0.4s;
+@media(max-width : 800px) {
+  .content {
+    margin-left: 1%;
+    margin-top: -40%;
   }
 
-  /* .card-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 1rem;
-
-    i {
-      font-size: 28px;
-      background: white;
-      color: black;
-      padding: 10px;
-      border-radius: 50%;
-      width: 46px;
-      height: 46px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    h2 {
-      color: #FFF;
-      font-family: "Red Hat Display";
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-      margin: 0;
-    }
-  } */
-  .card-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 0.5rem;
-    flex-direction: row;
-    writing-mode: vertical-rl;
-    /* transform: rotate(180deg); */
-    transition: all 0.5s ease;
-  
-    img {
-      width: 36px;
-      height: 36px;
-    }
-  
-    h2 {
-      font-size: 17px;
-      color: #fff;
-      margin: 0;
-
-    }
-    &.h2-expanded {
-      width: 300px;
-    }
-  
-
-    .expanded & {
-      writing-mode: horizontal-tb;
-      transform: none;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-  
-      h2 {
-        font-size: 18px;
-        text-align: left;
-      }
-    }
-
-    @media (max-width: 768px) {
-      writing-mode: horizontal-tb !important;
-      transform: none !important;
-      flex-direction: row !important;
-      justify-content: flex-start;
-      align-items: center;
-  
-      h2 {
-        font-size: 14px;
-      }
-    }
-  }
-  
-  .card-body {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-
-    p {
-      color: #FFF;
-      text-align: center;
-      font-family: "Red Hat Display";
-      /* font-size: 18px; */
-      font-size: clamp(16px, 2vw, 18px);
-      font-style: normal;
-      font-weight: 600;
-      line-height: normal;
-      margin: 0;
-      max-width: 500px;
-      width: 100%;
-      height: 200px;
-    }
-    &.p-expanded{
-      width: 350px;
-    }
-
-    @media (max-width: 768px){
-      p{
-        height: auto;
-      }
-      &.p-expanded{
-        width: 100%;
-      }
-    }
-  }
-}
-
-@media (max-width: 992px) {
-  .about-wrapper {
-    padding-top: 4rem;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .image-section {
-    margin-right: 0;
-    margin-bottom: -280px;
-    z-index: 3;
-
-    img {
-      top: -274px;
-      width: 235px;
-      height: 402px;
-    }
-  }
-
-  .info-overlay {
-    padding: 0;
-    margin-top: -50px;
-    flex-direction: column;
-    gap: 30px;
-
-    .about-box {
-      padding: 2rem 1rem;
-      text-align: center;
-      flex-direction: column;
-      height: auto;
-      margin: 0px;
-      margin-top: 18rem;
-      
-      .about-section {
-        padding: 0;
-      }
-    }
-    .intro {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 40px;
-
-      .intro-section {
-        text-align: center;
-        align-items: center;
-
-        .name{
-          gap: 30px;
-        }
-      }
-
-      h1 {
-        font-size: 28px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-
-        .degree {
-          font-size: 14px;
-        }
-      }
-
-      .title,
-      .experience {
-        font-size: 1rem;
-      }
-    }
-  }
-
-  .approach-container{
-    padding: 0.5rem;
-  }
-  .approach-section{
-    margin: 7rem 1rem;
-    margin-bottom: 3rem;
-  }
-  .float-carousel{
-    width: 100%;
-  }
-  .quote{
+  .banner-text h1 {
     font-size: 20px;
   }
-  .author{
-    font-size: 16px;
-    text-align: center;
+
+  .qualification {
+    font-size: 18px;
   }
-  .card-grid {
-    grid-template-columns: 1fr;
-    padding: 20px 1rem;
+
+  .count-num {
+    font-size: 30px;
   }
-  .quote{
-    font-size: 10px;
-    margin: 0;
+
+  .count-for {
+    font-size: 14px;
   }
-  .collapsed-view, .expanded-view h4{
-    font-size: 12px;
-    margin: 0;
-    text-align: center;
+
+  .banner-button button {
+    width: 250px;
   }
-  .collapsed-view h4{
-    font-size: 12px;
-    margin: 0;
-  }
-  .card{
-    height: 250px;
-  }
-  .author{
-    display: flex;
+
+}
+
+@media(max-width : 768px) {
+  .expertise-content {
     flex-direction: column;
+  }
+}
+
+@media (max-width : 600px) {
+
+  .banner-section {
+    max-height: 800px;
 
   }
+
+  .mobile-banner {
+    display: block;
+    max-height: 850px;
+  }
+
+  .desktop-banner {
+    display: none;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 10%;
+    margin-top: 0;
+    gap: 0;
+    max-height: 805px;
+    overflow-y: hidden;
+  }
+
+  .content h1 {
+    line-height: 30px;
+    /* 136.364% */
+    font-size: 22px;
+  }
+
+  .qualification {
+    font-size: 18px;
+    line-height: 30px;
+    margin: 0;
+  }
+
+  .counts {
+    gap: 20px;
+  }
+
+  .count-box {
+    max-width: 100px;
+  }
+
+  .count-num {
+    font-size: 26px;
+  }
+
+  .count-for {
+    font-size: 12px;
+  }
+
+  .banner-button{
+    margin-top: 5%;
+  }
+
+  .docimage {
+    display: flex;
+    justify-content: center;
+  }
+
+  .docimage img {
+    display: block;
+    height: 500px;
+    width: auto;
+    position: relative;
+    margin-top: -450px;
+  }
+
+  .box h2,
+  .expertise h2 {
+    font-size: 28px;
+  }
+
+  .box p {
+    font-size: 16px;
+  }
+
+  .points img {
+    width: 30px;
+    height: auto;
+  }
+
+  .expertise {
+    padding: 2%;
+  }
+
+  .expertise-content {
+    gap: 30px;
+  }
+
+  .points-image img {
+    width: 300px;
+    height: auto;
+  }
+
+  .doctor-profile{
+    margin-top: 70px;
+  }
+
+}
+
+@media (max-width:400px) {
+
+  .docimage img {
+    position: relative;
+    margin-top: -400px;
+    height: 400px;
+  }
+
+  .doctor-profile{
+    margin-top: 20px;
+  }
+}
+
+@media (max-width:350px) {
+
+  .docimage img {
+    position: relative;
+    margin-top: -280px;
+    height: 300px;
+  }
+
 }
