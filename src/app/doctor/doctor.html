@@ -76,21 +76,23 @@
   </section>
 
   <!-- specialities -->
-  <section class="specialities">
-    <h2>Specialties:</h2>
-
-    <div class="speciality-wrapper">
-
-      <div class="spec-box" *ngFor="let card of cards"  [ngStyle]="{ 'background-color': card.bgColor }">
-
-        <div class="spec-head">
-          <img [src]="card.avatar" [alt]="card.alt">
-          <div class="spec-name">{{card.name}}</div>
+  <section class="specialites-section">
+    <h2>Specialties</h2>
+    <div class="main">
+      <div class="column" *ngFor="let card of cards; let i = index" [ngClass]="{ 'expanded': expandedIndex === i }"
+        [ngStyle]="{ 'background': card.bgColor }" (click)="expandCard(i)">
+  
+        <div class="inner-element" [ngClass]="{ 'active': expandedIndex === i }">
+          <div class="card-header">
+            <img class="fa-regular" [src]="card.avatar" [alt] = 'card.alt' />
+            <h2 [ngClass]="{ 'h2-expanded': expandedIndex === i }">{{ card.message }}</h2>
+          </div>
+          <div class="card-body" [ngClass]="{ 'p-expanded': expandedIndex === i }" *ngIf="expandedIndex === i">
+            <p>{{ card.role }}</p>
+          </div>
         </div>
-
-        <p class="spec-description">{{card.role}}</p>
+  
       </div>
-
     </div>
   </section>
 </main>
