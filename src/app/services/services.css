@@ -448,10 +448,15 @@ h1 {
 
   .department-highlight {
     flex-direction: column;
-    padding: 7rem 1.5rem;
+    padding: 5rem 1.5rem 2rem;
+    height: auto;
+    min-height: unset;
+    overflow: visible;
 
     .content-wrapper {
       text-align: center;
+      width: 100%;
+      max-width: 100%;
 
       h2 {
         font-size: 1.5rem;
@@ -459,26 +464,36 @@ h1 {
 
       p {
         font-size: 0.95rem;
+        width: 100%;
+        line-height: 1.6;
       }
     }
 
     .background-shapes {
-      width: 50%;
-      top: -32px;
-      right: -9px;
+      width: 45%;
+      top: 0;
+      right: 0;
+      z-index: 0;
+      pointer-events: none;
     }
 
     .background-shapes img {
       height: auto;
       width: 100%;
-      top: 0;
-      right: 0;
       object-fit: contain;
     }
 
     .background-shapes-1 {
-      bottom: -75%;
-      height: 100%;
+      bottom: 0;
+      top: auto;
+      height: auto;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 2;
     }
   }
 

@@ -136,7 +136,7 @@
 </section>
 <section class="clinical-services">
     <h2>Our Clinical Services</h2>
-    <div *ngIf="!isMobile" class="card-container">
+    <div *ngIf="!isMobile && !isTablet" class="card-container">
         <div class="card">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="80"
                 viewBox="0 0 80 80" fill="none">
@@ -239,7 +239,7 @@
                 reassuring.</p>
         </div>
     </div>
-    <div [routerLink]="'/services'" *ngIf="!isMobile" class="button">
+    <div [routerLink]="'/services'" *ngIf="!isMobile && !isTablet" class="button">
         <div class="know-more-btn">Know More</div>
     </div>
 </section>
@@ -275,6 +275,33 @@
 
         <button class="carousel-arrow right" (click)="nextCard()"><img class="carousel-arrow"
                 src='./right-arrow.png'></button>
+    </div>
+
+    <div [routerLink]="'/services'" class="button know-more">
+        <div class="know-more-btn">Know More</div>
+    </div>
+</section>
+
+<section *ngIf="isTablet" class="card-carousel tablet-carousel">
+    <div class="tablet-carousel-container">
+        <button class="carousel-arrow left" (click)="prevCard()"><img alt="" src='./left-arrow.png'></button>
+
+        <div class="tablet-card-wrapper">
+            <div class="card tablet-card" *ngIf="cards.length" [ngStyle]="{ 'background-color': cards[currentIndex].bgColor }">
+                <img [src]="cards[currentIndex].img" />
+                <h3>{{ cards[currentIndex].title }}</h3>
+                <h4>{{ cards[currentIndex].text }}</h4>
+                <p>{{ cards[currentIndex].content }}</p>
+            </div>
+            <div class="card tablet-card" *ngIf="cards.length" [ngStyle]="{ 'background-color': cards[(currentIndex + 1) % cards.length].bgColor }">
+                <img [src]="cards[(currentIndex + 1) % cards.length].img" />
+                <h3>{{ cards[(currentIndex + 1) % cards.length].title }}</h3>
+                <h4>{{ cards[(currentIndex + 1) % cards.length].text }}</h4>
+                <p>{{ cards[(currentIndex + 1) % cards.length].content }}</p>
+            </div>
+        </div>
+
+        <button class="carousel-arrow right" (click)="nextCard()"><img alt="" src='./right-arrow.png'></button>
     </div>
 
     <div [routerLink]="'/services'" class="button know-more">

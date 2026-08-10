@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+﻿import { Component, HostListener } from '@angular/core';
 import { ViewportScroller } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
@@ -12,15 +12,27 @@ import { Title, Meta } from '@angular/platform-browser';
 })
 export class Home {
   cards = [
-    { title: 'Outpatient Consultation', text: 'Comprehensive Medical Care', content: 'At Diyaanvi Clinic, our outpatient consultations are designed to provide clear, accurate diagnoses and effective treatment plans. With a team of experienced specialists and general practitioners, we ensure every patient receives individualized attention in a supportive environment. Book your consultation today and take the first step toward better health.' ,img:'./service-1.svg',bgColor:'#BBE5FF' },
-    { title: 'Laboratory & Diagnostics', text: 'Accurate Results. Trusted Methods.', content: 'Our in-house laboratory is equipped with advanced diagnostic tools to support timely and precise evaluations. From routine blood tests to specialized diagnostics, all procedures are carried out by trained professionals following strict quality standards. We help you get the clarity you need to make informed decisions about your health.',img:'./service-2.svg', bgColor:'#E4BBFF' },
-    { title: 'ECG (Electrocardiogram)', text: 'Quick, Painless Cardiac Testing', content: 'Our ECG service offers a non-invasive, reliable method to assess your heart\'s electrical activity. Whether you\'re undergoing a routine heart check-up or need further cardiac evaluation, our trained staff ensures the procedure is smooth, efficient, and results are delivered with clarity.',img:'./service-3.svg', bgColor:'#BBFFC1' },
-    { title: 'Nursing Care Services', text: 'Supportive Care with a Personal Touch', content: 'Our nursing team is committed to delivering compassionate, professional care that supports every patient’s recovery and comfort. Whether you need assistance during your visit or post-procedure care, our nursing staff is here to ensure your experience at Diyaanvi Clinic is safe, respectful and reassuring.',img:'./service-4.svg',bgColor:'#FFD6BB' }
+    { title: 'Outpatient Consultation', text: 'Comprehensive Medical Care', content: 'At Diyaanvi Clinic, our outpatient consultations are designed to provide clear, accurate diagnoses and effective treatment plans. With a team of experienced specialists and general practitioners, we ensure every patient receives individualized attention in a supportive environment. Book your consultation today and take the first step toward better health.', img: './outpatient-consultation-diayaanvi-clinic.svg', bgColor: '#BBE5FF' },
+    { title: 'Laboratory & Diagnostics', text: 'Accurate Results. Trusted Methods.', content: 'Our in-house laboratory is equipped with advanced diagnostic tools to support timely and precise evaluations. From routine blood tests to specialized diagnostics, all procedures are carried out by trained professionals following strict quality standards. We help you get the clarity you need to make informed decisions about your health.', img: './diagnostic-lab-testing-uttarahalli.svg', bgColor: '#E4BBFF' },
+    { title: 'ECG (Electrocardiogram)', text: 'Quick, Painless Cardiac Testing', content: 'Our ECG service offers a non-invasive, reliable method to assess your heart\'s electrical activity. Whether you\'re undergoing a routine heart check-up or need further cardiac evaluation, our trained staff ensures the procedure is smooth, efficient, and results are delivered with clarity.', img: './ecg-heart-testing-diayaanvi-clinic.svg', bgColor: '#BBFFC1' },
+    { title: 'Nursing Care Services', text: 'Supportive Care with a Personal Touch', content: 'Our nursing team is committed to delivering compassionate, professional care that supports every patient\'s recovery and comfort. Whether you need assistance during your visit or post-procedure care, our nursing staff is here to ensure your experience at Diyaanvi Clinic is safe, respectful and reassuring.', img: './nursing-care-services-diayaanvi-clinic.svg', bgColor: '#FFD6BB' }
   ]
 
   currentIndex = 0;
   intervalId: any;
-  isMobile:boolean = false;
+  isMobile: boolean = false;
+  isTablet: boolean = false;
+
+  @HostListener('window:resize')
+  onResize() {
+    this.checkScreenSize();
+  }
+
+  checkScreenSize() {
+    const width = window.innerWidth;
+    this.isMobile = width <= 768;
+    this.isTablet = width > 768 && width <= 1024;
+  }
 
   ngOnInit() {
     // meta
@@ -28,10 +40,8 @@ export class Home {
     this.titleService.setTitle('Diyaanvi Clinic | Dermatologist & General Physician in Bangalore');
     this.metaService.updateTag({ name: 'description', content: 'Expert dermatologist, diabetologist & general physician in Uttarahalli, Bangalore. Visit Diyaanvi Multi-Speciality Clinic today.' });
 
-    const isMobile = window.innerWidth <= 768;
-    console.log(isMobile)
-    this.isMobile = isMobile;
-    this.startRotation();    
+    this.checkScreenSize();
+    this.startRotation();
   }
 
   ngOnDestroy() {
@@ -46,6 +56,7 @@ export class Home {
   scrollToAbout(): void {
     this.viewportScroller.scrollToAnchor('about');
   }
+
   pauseRotation() {
     if (this.intervalId) clearInterval(this.intervalId);
   }
@@ -101,6 +112,7 @@ export class Home {
       }
     );
   }
+
   nextCard() {
     this.currentIndex = (this.currentIndex + 1) % this.cards.length;
   }
